@@ -1,0 +1,41 @@
+<div id="user-activity" class="card">
+  <div class="card-header border-0 pb-0 d-sm-flex d-block">
+    <div>
+      <h4 class="card-title mb-1">Sales Revenue</h4>
+    </div>
+    <div class="card-action card-tabs mt-3 mt-sm-0">
+        <ul class="nav nav-tabs" role="tablist" ngbNav #nav="ngbNav" >
+                <li class="nav-item" ngbNavItem="Monthly">
+                    <a class="nav-link" data-toggle="tab" href="#Monthly" role="tab" aria-selected="false" ngbNavLink>
+                        Monthly	
+                    </a>
+                    <ng-template ngbNavContent>
+                        <app-monthly></app-monthly>
+                    </ng-template>
+                </li>
+                <li class="nav-item" ngbNavItem="Weekly">
+                    <a class="nav-link" data-toggle="tab" href="#Weekly" role="tab" aria-selected="false" ngbNavLink>
+                        Weekly
+                    </a>
+                    <ng-template ngbNavContent>
+                        <app-weekly></app-weekly>
+                    </ng-template>
+                </li>
+                <li class="nav-item" ngbNavItem="Today">
+                    <a class="nav-link" data-toggle="tab" href="#Today" role="tab" aria-selected="false" ngbNavLink>
+                        Today
+                    </a>
+                    <ng-template ngbNavContent>
+                        <app-today></app-today>
+                    </ng-template>
+                </li>
+        </ul>
+       
+    </div>
+  </div>
+  <div class="card-body">
+    
+    <div [ngbNavOutlet]="nav" class=""></div>
+  
+  </div>
+</div>

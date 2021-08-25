@@ -1,0 +1,34 @@
+<div class="card">
+  <div class="card-header pb-0 border-0">
+    <div>
+      <h5 class="mb-0 text-black font-weight-bold">Pie Chart</h5>
+      <p class="fs-14 mb-0">Ticket Sold</p>
+    </div>
+    <div class="dropdown d-inline-block" ngbDropdown>
+	  <div class="dropdown-toggle fs-14" data-toggle="dropdown" ngbDropdownToggle>
+		Daily
+	  </div>
+	  <div class="dropdown-menu dropdown-menu-left" ngbDropdownMenu>
+		<a class="dropdown-item" href="javascript:void(0);">Newest</a>
+		<a class="dropdown-item" href="javascript:void(0);">Old</a>
+	  </div>
+	</div>
+  </div>
+  <div class="card-body pt-2">
+    <div id="chartCircle">
+      
+        <apx-chart
+                [series]="chartOptions.series"
+                [chart]="chartOptions.chart"
+                [plotOptions]="chartOptions.plotOptions"
+                [labels]="chartOptions.labels"
+                [fill]="chartOptions.fill"
+                [responsive]="chartOptions.responsive"
+                [stroke]="chartOptions.stroke"
+                [colors]="chartOptions.colors"
+                [legend]="chartOptions.legend"
+            ></apx-chart>
+      
+    </div>
+  </div>
+</div>

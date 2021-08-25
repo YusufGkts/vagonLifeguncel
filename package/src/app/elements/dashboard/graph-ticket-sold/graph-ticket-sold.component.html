@@ -1,0 +1,34 @@
+<div class="card">
+  <div class="card-body">
+    <div class="row mx-0">
+      <div class="col-sm-12 col-lg-4 px-0">
+        <h2 class="fs-40 text-black font-w600">862,441 <small class="fs-18 ml-2 font-w600 mb-1">pcs</small></h2>
+        <p class="font-w100 fs-20 text-black">Ticket Sold Today</p>
+        <div class="justify-content-between border-0 d-flex fs-14 align-items-end">
+          <a href="javascript:void(0);" class="text-primary">View more <i class="las la-long-arrow-alt-right scale5 ml-2"></i></a>
+          <div class="text-right">
+            <!-- <span class="peity-primary" data-style="width:100%;">0,2,1,4</span> -->
+            <app-graph-increment></app-graph-increment>
+            <h3 class="mt-2 mb-1">+4%</h3>
+            <span>than last day</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-lg-8 px-0">
+        <apx-chart
+        [series]="chartOptions.series"
+        [chart]="chartOptions.chart"
+        [plotOptions]="chartOptions.plotOptions"
+        [responsive]="chartOptions.responsive"
+        [xaxis]="chartOptions.xaxis"
+        [yaxis]="chartOptions.yaxis"
+        [dataLabels]="chartOptions.dataLabels"
+        [legend]="chartOptions.legend"
+        [colors]="chartOptions.colors"
+        [fill]="chartOptions.fill"
+        [grid]="chartOptions.grid"
+        ></apx-chart>
+      </div>
+    </div>
+  </div>
+</div>

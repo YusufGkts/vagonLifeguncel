@@ -1,0 +1,31 @@
+<div class="card overflow-hidden">
+  <div class="card-header border-0 pb-0">
+    <div>
+      <h3 class="mb-0 text-black font-w600">$124,136</h3>
+      <p class="mb-1">Revenue</p>
+    </div>
+  </div>
+  <div class="card-body  p-0">	
+    <!-- <canvas id="revenueChart" height="85"></canvas> -->
+    
+    <apx-chart
+			id="lineChart"
+            [series]="chartOptions.series"
+            [chart]="chartOptions.chart"
+            [xaxis]="chartOptions.xaxis"
+            [dataLabels]="chartOptions.dataLabels"
+            [yaxis]="chartOptions.yaxis"
+            [labels]="chartOptions.labels"
+            [title]="chartOptions.title"
+            [subtitle]="chartOptions.subtitle"
+            [tooltip]="chartOptions.tooltip"
+            [stroke]="chartOptions.stroke"
+            [colors]='chartOptions.colors'
+            [fill]='chartOptions.fill'
+            [legend]='chartOptions.legend'
+            [grid]='chartOptions.grid'
+        ></apx-chart>
+    
+    
+  </div>
+</div>

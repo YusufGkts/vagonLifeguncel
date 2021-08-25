@@ -1,0 +1,29 @@
+<div class="card">
+  <div class="card-body p-4">
+    <div class="media align-items-center">
+      <span class="mr-3">
+        <!-- <span class="donut" data-peity='{ "fill": ["rgb(33, 48, 184)", "rgba(33, 48, 184, .1)"]}'>5/8</span> -->
+        
+        <apx-chart
+              [series]="chartOptions.series"
+              [chart]="chartOptions.chart"
+              [labels]="chartOptions.labels"
+              [fill]="chartOptions.fill"
+              [dataLabels]="chartOptions.dataLabels"
+              [colors]="chartOptions.colors"
+              [stroke]="chartOptions.stroke"
+              [responsive]="chartOptions.responsive"
+              [tooltip]="chartOptions.tooltip"
+              [legend]="chartOptions.legend"
+          ></apx-chart>
+        
+      </span>
+      <div class="media-body">
+        <div class="d-flex align-items-center">
+          <h2 class="mb-0 mr-3 text-black font-w600">25 Left</h2>
+        </div>
+        <p class="mb-0">Available Ticket</p>
+      </div>
+    </div>
+  </div>
+</div>

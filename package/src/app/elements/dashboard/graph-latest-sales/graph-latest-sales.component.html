@@ -1,0 +1,74 @@
+<div class="card">
+  <div class="card-header border-0 pb-3 d-sm-flex d-block ">
+    <h4 class="card-title">Latest Sales</h4>
+    <div class="d-flex mt-3 mt-sm-0">
+      <div class="dropdown" ngbDropdown>
+        <button type="button" class="btn btn-primary dropdown-toggle light btn-sm btn-rounded" data-toggle="dropdown" aria-expanded="false" ngbDropdownToggle>
+          Weekly
+        </button>
+        <div class="dropdown-menu" ngbDropdownMenu>
+          <a class="dropdown-item" href="javascript:void(0);">Daily</a>
+          <a class="dropdown-item" href="javascript:void(0);">Weekly</a>
+          <a class="dropdown-item" href="javascript:void(0);">Monthly</a>
+        </div>
+      </div>
+      <div class="dropdown ml-2" ngbDropdown>
+        <button type="button" class="btn btn-primary dropdown-toggle light btn-sm btn-rounded" data-toggle="dropdown" aria-expanded="false" ngbDropdownToggle>
+          2020
+        </button>
+        <div class="dropdown-menu" ngbDropdownMenu>
+          <a class="dropdown-item" href="javascript:void(0);">2020</a>
+          <a class="dropdown-item" href="javascript:void(0);">2019</a>
+          <a class="dropdown-item" href="javascript:void(0);">2018</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="row mx-0 align-items-center">
+      <div class="col-sm-8 col-lg-12 col-xl-7 px-0 text-center mb-3 mb-sm-0">
+        <div id="chart" class="d-inline-block">
+            
+            <apx-chart
+                [series]="chartOptions.series"
+                [chart]="chartOptions.chart"
+                [labels]="chartOptions.labels"
+                [fill]="chartOptions.fill"
+                [dataLabels]="chartOptions.dataLabels"
+                [colors]="chartOptions.colors"
+                [stroke]="chartOptions.stroke"
+                [responsive]="chartOptions.responsive"
+                [plotOptions]="chartOptions.plotOptions"
+            ></apx-chart>
+          
+          
+        </div>
+      </div>
+      <div class="col-sm-4 col-lg-12 col-xl-5 px-0">
+        <div class="chart-deta">
+          <div class="col px-0">
+            <span class="bg-warning"></span>	
+            <div class="mx-3">
+              <p class="fs-14">Ticket Left</p>
+              <h3>21,512</h3>
+            </div>
+          </div>
+          <div class="col px-0">
+            <span class="bg-primary"></span>	
+            <div class="mx-3">
+              <p class="fs-14">Ticket Sold</p>
+              <h3>456,721</h3>
+            </div>
+          </div>
+          <div class="col px-0">
+            <span class="bg-success"></span>	
+            <div class="mx-3">
+              <p class="fs-14">Event Held</p>
+              <h3>235</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
