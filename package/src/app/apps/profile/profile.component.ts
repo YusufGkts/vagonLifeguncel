@@ -4,6 +4,7 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { Customer } from 'src/app/customer-list/customer-list.component';
 import { order, ORDERS } from 'src/app/order-list/order-list.component';
 import { payments, payment } from 'src/app/payments/payment.component';
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
