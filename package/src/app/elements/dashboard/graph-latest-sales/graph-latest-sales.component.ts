@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
 import {
-  ChartComponent,  
+  ChartComponent,
   ApexNonAxisChartSeries,
   ApexResponsive,
   ApexChart,
@@ -10,7 +10,7 @@ import {
   ApexLegend,
   ApexStroke,
   ApexPlotOptions,
-} from "ng-apexcharts";
+} from 'ng-apexcharts';
 
 export type ChartOptions = {
   series?: ApexNonAxisChartSeries | any;
@@ -25,15 +25,13 @@ export type ChartOptions = {
   plotOptions?: ApexPlotOptions | any;
 };
 
-
-
 @Component({
   selector: 'app-graph-latest-sales',
   templateUrl: './graph-latest-sales.component.html',
-  styleUrls: ['./graph-latest-sales.component.css']
+  styleUrls: ['./graph-latest-sales.component.css'],
 })
 export class GraphLatestSalesComponent implements OnInit {
-  @ViewChild("chart") chart: ChartComponent;
+  @ViewChild('chart') chart: ChartComponent;
   public chartOptions: Partial<ChartOptions>;
 
   constructor() {
@@ -42,55 +40,51 @@ export class GraphLatestSalesComponent implements OnInit {
       chart: {
         width: 220,
         height: 220,
-        type: "donut",
+        type: 'donut',
         sparkline: {
-					enabled: true,
-				},
+          enabled: true,
+        },
       },
       dataLabels: {
-        enabled: false
+        enabled: false,
       },
-        stroke: {
-          width: 0,
-        },
+      stroke: {
+        width: 0,
+      },
       fill: {
-        type: "solid"
+        type: 'solid',
       },
       legend: {
-        position: "bottom",
-        show:false
+        position: 'bottom',
+        show: false,
       },
-			plotOptions: {
-				pie: {
-					customScale: 1,
-					donut: {
-						size: '40%'
-						
-					}
-				}
-			},
-       labels: ["Ticket Left", "Ticket Sold", "Event Held"],
-      colors:['#ff7a00', '#2130b8', '#21b830'],
+      plotOptions: {
+        pie: {
+          customScale: 1,
+          donut: {
+            size: '40%',
+          },
+        },
+      },
+      labels: ['Sıcak Serisi', 'Yaşam Serisi', 'Yol Serisi'],
+      colors: ['#ff7a00', '#2130b8', '#21b830'],
       responsive: [
         {
           breakpoint: 1300,
           options: {
             chart: {
               width: 120,
-              height: 120
+              height: 120,
             },
             legend: {
-              position: "bottom",
-			  show:false
-            }
-          }
-        }
-      ]
+              position: 'bottom',
+              show: false,
+            },
+          },
+        },
+      ],
     };
   }
 
-  ngOnInit(): void {
-  }
-
-
+  ngOnInit(): void {}
 }

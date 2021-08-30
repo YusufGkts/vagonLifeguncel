@@ -2,8 +2,8 @@
 	Content body start
 ***********************************-->
 <div class="content-body">
-	<div class="container-fluid">
-		<div class="row page-titles mx-0">
+  <div class="container-fluid">
+    <!-- <div class="row page-titles mx-0">
             <div class="col-sm-6 p-md-0">
                 <div class="welcome-text">
                     <h4>Hi, welcome back!</h4>
@@ -16,663 +16,1790 @@
                     <li class="breadcrumb-item active"><a href="javascript:void(0)">Customer</a></li>
                 </ol>
             </div>
+        </div> -->
+    <div class="row mb-5 align-items-center">
+      <div class="col-xl-3 align-self-start" style="margin-top: 1rem">
+        <div class="card mb-3 bgl-primary">
+          <div class="card-body px-4 py-3">
+            <div class="media align-items-center">
+              <span class="mr-4">
+                <svg
+                  width="34"
+                  height="34"
+                  viewBox="0 0 34 34"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M33.9991 9.91632C33.9992 9.66181 33.9307 9.41199 33.8008 9.19311C33.6709 8.97424 33.4845 8.79439 33.2611 8.67249L17.6777 0.172485C17.4696 0.0589066 17.2363 -0.000610352 16.9991 -0.000610352C16.762 -0.000610352 16.5287 0.0589066 16.3206 0.172485L0.737221 8.67249C0.51372 8.79433 0.327179 8.97415 0.197213 9.19303C0.0672465 9.41191 -0.00134277 9.66176 -0.00134277 9.91632C-0.00134277 10.1709 0.0672465 10.4207 0.197213 10.6396C0.327179 10.8585 0.51372 11.0383 0.737221 11.1602L4.94897 13.458L0.737221 15.7558C0.51372 15.8777 0.327179 16.0575 0.197213 16.2764C0.0672465 16.4952 -0.00134277 16.7451 -0.00134277 16.9997C-0.00134277 17.2542 0.0672465 17.5041 0.197213 17.7229C0.327179 17.9418 0.51372 18.1216 0.737221 18.2435L4.94897 20.5413L0.737221 22.8392C0.51372 22.961 0.327179 23.1408 0.197213 23.3597C0.0672465 23.5786 -0.00134277 23.8284 -0.00134277 24.083C-0.00134277 24.3375 0.0672465 24.5874 0.197213 24.8063C0.327179 25.0252 0.51372 25.205 0.737221 25.3268L16.3206 33.8268C16.5308 33.9337 16.7633 33.9894 16.9991 33.9894C17.235 33.9894 17.4675 33.9337 17.6777 33.8268L33.2611 25.3268C33.4846 25.205 33.6711 25.0252 33.8011 24.8063C33.931 24.5874 33.9996 24.3375 33.9996 24.083C33.9996 23.8284 33.931 23.5786 33.8011 23.3597C33.6711 23.1408 33.4846 22.961 33.2611 22.8392L29.0493 20.5413L33.2611 18.2449C33.4846 18.1231 33.6711 17.9432 33.8011 17.7244C33.931 17.5055 33.9996 17.2556 33.9996 17.0011C33.9996 16.7465 33.931 16.4967 33.8011 16.2778C33.6711 16.0589 33.4846 15.8791 33.2611 15.7572L29.0493 13.458L33.2611 11.1616C33.4847 11.0395 33.6713 10.8595 33.8012 10.6403C33.931 10.4212 33.9994 10.1711 33.9991 9.91632ZM29.6245 24.083L16.9991 30.9694L4.37381 24.083L7.90697 22.1535L16.3206 26.7435C16.5294 26.8547 16.7625 26.9129 16.9991 26.9129C17.2358 26.9129 17.4688 26.8547 17.6777 26.7435L26.0913 22.1535L29.6245 24.083ZM29.6245 16.9997L16.9991 23.8861L4.37381 16.9997L7.90697 15.0702L16.3206 19.6602C16.5291 19.7725 16.7623 19.8313 16.9991 19.8313C17.236 19.8313 17.4692 19.7725 17.6777 19.6602L26.0913 15.0702L29.6245 16.9997ZM16.9991 16.8027L4.37381 9.91632L16.9991 3.0299L29.6245 9.91632L16.9991 16.8027Z"
+                    fill="#2130B8"
+                  />
+                </svg>
+              </span>
+              <div class="media-body ml-1">
+                <h5 class="mb-0 text-primary font-w600">Kullanıcılar</h5>
+              </div>
+            </div>
+          </div>
         </div>
-		<div class="row">
-			<div class="col-lg-12">
-				<div class="card">
-					<div class="card-body">
-						<div class="table-responsive">
-							<table class="table table-responsive-lg mb-0 table-striped">
-								<thead>
-									<tr>
-										<th class="">
-											<div class="custom-control custom-checkbox mx-2">
-												<input type="checkbox" class="custom-control-input" id="checkAll" (change)="checkUncheckAll($event)">
-												<label class="custom-control-label" for="checkAll"></label>
-											</div>
-										</th>
-										<th>Name</th>
-										<th>Email</th>
-										<th>Phone</th>
-										<th class="pl-5 width200">Billing Address
-										</th>
-										<th>Joined</th>
-										<th></th>
-									</tr>
-								</thead>
-								<tbody id="customers">
-									<tr class="btn-reveal-trigger">
-										<td>
-											<div class="custom-control custom-checkbox mx-2">
-												<input type="checkbox" class="custom-control-input" id="checkbox1">
-												<label class="custom-control-label" for="checkbox1"></label>
-											</div>
-										</td>
-										<td class="py-3">
-											<a href="javascript:void(0);">
-												<div class="media d-flex align-items-center">
-													<div class="avatar avatar-xl mr-2">
-														<div class=""><img class="rounded-circle img-fluid"
-															src="assets/images/avatar/5.png" width="30" alt="" />
-														</div>
-													</div>
-													<div class="media-body">
-														<h5 class="mb-0 fs--1">Ricky Antony</h5>
-													</div>
-												</div>
-											</a>
-										</td>
-										<td class="py-2"><a
-										href="mailto:ricky@example.com">info@example.com</a></td>
-										<td class="py-2"> <a href="tel:2012001851">(201) 200-1851</a></td>
-										<td class="py-2 pl-5 wspace-no">2392 Main Avenue, Penasauka</td>
-										<td class="py-2">30/03/2018</td>
-										<td class="py-2 text-right">
-											<div class="dropdown dropdown-no-icon" ngbDropdown>
-												<button class="btn btn-primary tp-btn-light sharp" type="button" ngbDropdownToggle><span class="fs--1">
-													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1">
-													<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="5" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="19" cy="12" r="2"></circle></g></svg>
-													</span>
-												</button>
-												<div class="dropdown-menu dropdown-menu-right border py-0" ngbDropdownMenu>
-													<div class="py-2"><a class="dropdown-item"  href="javascript:void(0);">Edit</a><a class="dropdown-item text-danger" href="javascript:void(0);">Delete</a></div>
-												</div>
-											</div>
-										</td>
-									</tr>
-									<tr class="btn-reveal-trigger">
-										<td class="py-2">
-											<div class="custom-control custom-checkbox mx-2">
-												<input type="checkbox" class="custom-control-input" id="checkbox2">
-												<label class="custom-control-label" for="checkbox2"></label>
-											</div>
-										</td>
-										<td class="py-3">
-											<a href="javascript:void(0);">
-												<div class="media d-flex align-items-center">
-													<div class="avatar avatar-xl mr-2">
-														<img class="rounded-circle img-fluid"
-														src="assets/images/avatar/1.png" alt="" width="30" />
-													</div>
-													<div class="media-body">
-														<h5 class="mb-0 fs--1">Emma Watson</h5>
-													</div>
-												</div>
-											</a>
-										</td>
-										<td class="py-2"><a href="mailto:emma@example.com">info@example.com</a>
-										</td>
-										<td class="py-2"> <a href="tel:2122288403">(212) 228-8403</a></td>
-										<td class="py-2 pl-5 wspace-no">2289 5th Avenue, New York
-										</td>
-										<td class="py-2">11/07/2017</td>
-										<td class="py-2 text-right">
-											<div class="dropdown dropdown-no-icon" ngbDropdown>
-												<button class="btn btn-primary tp-btn-light sharp" type="button" ngbDropdownToggle><span class="fs--1">
-													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1">
-													<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="5" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="19" cy="12" r="2"></circle></g></svg>
-													</span>
-												</button>
-												<div class="dropdown-menu dropdown-menu-right border py-0" ngbDropdownMenu>
-													<div class="py-2"><a class="dropdown-item"  href="javascript:void(0);">Edit</a><a class="dropdown-item text-danger" href="javascript:void(0);">Delete</a></div>
-												</div>
-											</div>
-										</td>
-									</tr>
-									<tr class="btn-reveal-trigger">
-										<td class="py-2">
-											<div class="custom-control custom-checkbox mx-2">
-												<input type="checkbox" class="custom-control-input" id="checkbox3">
-												<label class="custom-control-label" for="checkbox3"></label>
-											</div>
-										</td>
-										<td class="py-3">
-											<a href="javascript:void(0);">
-												<div class="media d-flex align-items-center">
-													<div class="avatar avatar-xl mr-2">
-														<div class=""><img class="rounded-circle img-fluid"
-															src="assets/images/avatar/5.png" width="30" alt="" />
-														</div>
-													</div>
-													<div class="media-body">
-														<h5 class="mb-0 fs--1">Rowen Atkinson</h5>
-													</div>
-												</div>
-											</a>
-										</td>
-										<td class="py-2"><a href="mailto:rown@example.com">info@example.com</a>
-										</td>
-										<td class="py-2"> <a href="tel:2012001851">(201) 200-1851</a></td>
-										<td class="py-2 pl-5 wspace-no">112 Bostwick Avenue, Jersey City
-										</td>
-										<td class="py-2">05/04/2016</td>
-										<td class="py-2 text-right">
-											<div class="dropdown dropdown-no-icon" ngbDropdown>
-												<button class="btn btn-primary tp-btn-light sharp" type="button" ngbDropdownToggle><span class="fs--1">
-													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1">
-													<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="5" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="19" cy="12" r="2"></circle></g></svg>
-													</span>
-												</button>
-												<div class="dropdown-menu dropdown-menu-right border py-0" ngbDropdownMenu>
-													<div class="py-2"><a class="dropdown-item"  href="javascript:void(0);">Edit</a><a class="dropdown-item text-danger" href="javascript:void(0);">Delete</a></div>
-												</div>
-											</div>
-										</td>
-									</tr>
-									<tr class="btn-reveal-trigger">
-										<td class="py-2">
-											<div class="custom-control custom-checkbox mx-2">
-												<input type="checkbox" class="custom-control-input" id="checkbox4">
-												<label class="custom-control-label" for="checkbox4"></label>
-											</div>
-										</td>
-										<td class="py-3">
-											<a href="javascript:void(0);">
-												<div class="media d-flex align-items-center">
-													<div class="avatar avatar-xl mr-2">
-														<img class="rounded-circle img-fluid"
-														src="assets/images/avatar/1.png" alt="" width="30" />
-													</div>
-													<div class="media-body">
-														<h5 class="mb-0 fs--1">Antony Hopkins</h5>
-													</div>
-												</div>
-											</a>
-										</td>
-										<td class="py-2"><a
-										href="mailto:antony@example.com">info@example.com</a></td>
-										<td class="py-2"> <a href="tel:9013243127">(901) 324-3127</a></td>
-										<td class="py-2 pl-5 wspace-no">3448 Ile De France St #242, </td>
-										<td class="py-2">05/04/2018</td>
-										<td class="py-2 text-right">
-											<div class="dropdown dropdown-no-icon" ngbDropdown>
-												<button class="btn btn-primary tp-btn-light sharp" type="button" ngbDropdownToggle><span class="fs--1">
-													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1">
-													<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="5" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="19" cy="12" r="2"></circle></g></svg>
-													</span>
-												</button>
-												<div class="dropdown-menu dropdown-menu-right border py-0" ngbDropdownMenu>
-													<div class="py-2"><a class="dropdown-item"  href="javascript:void(0);">Edit</a><a class="dropdown-item text-danger" href="javascript:void(0);">Delete</a></div>
-												</div>
-											</div>
-										</td>
-									</tr>
-									<tr class="btn-reveal-trigger">
-										<td class="py-2">
-											<div class="custom-control custom-checkbox mx-2">
-												<input type="checkbox" class="custom-control-input" id="checkbox5">
-												<label class="custom-control-label" for="checkbox5"></label>
-											</div>
-										</td>
-										<td class="py-3">
-											<a href="javascript:void(0);">
-												<div class="media d-flex align-items-center">
-													<div class="avatar avatar-xl mr-2">
-														<img class="rounded-circle img-fluid"
-														src="assets/images/avatar/1.png" alt="" width="30" />
-													</div>
-													<div class="media-body">
-														<h5 class="mb-0 fs--1">Jennifer Schramm</h5>
-													</div>
-												</div>
-											</a>
-										</td>
-										<td class="py-2"><a
-										href="mailto:jennifer@example.com">info@example.com</a></td>
-										<td class="py-2"> <a href="tel:8283829631">(828) 382-9631</a></td>
-										<td class="py-2 pl-5 wspace-no">659 Hannah Street, Charlotte
-										</td>
-										<td class="py-2">17/03/2016</td>
-										<td class="py-2 text-right">
-											<div class="dropdown dropdown-no-icon" ngbDropdown>
-												<button class="btn btn-primary tp-btn-light sharp" type="button" ngbDropdownToggle><span class="fs--1">
-													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1">
-													<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="5" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="19" cy="12" r="2"></circle></g></svg>
-													</span>
-												</button>
-												<div class="dropdown-menu dropdown-menu-right border py-0" ngbDropdownMenu>
-													<div class="py-2"><a class="dropdown-item"  href="javascript:void(0);">Edit</a><a class="dropdown-item text-danger" href="javascript:void(0);">Delete</a></div>
-												</div>
-											</div>
-										</td>
-									</tr>
-									<tr class="btn-reveal-trigger">
-										<td class="py-2">
-											<div class="custom-control custom-checkbox mx-2">
-												<input type="checkbox" class="custom-control-input" id="checkbox6">
-												<label class="custom-control-label" for="checkbox6"></label>
-											</div>
-										</td>
-										<td class="py-3">
-											<a href="javascript:void(0);">
-												<div class="media d-flex align-items-center">
-													<div class="avatar avatar-xl mr-2">
-														<div class=""><img class="rounded-circle img-fluid"
-															src="assets/images/avatar/5.png" width="30" alt="" />
-														</div>
-													</div>
-													<div class="media-body">
-														<h5 class="mb-0 fs--1">Raymond Mims</h5>
-													</div>
-												</div>
-											</a>
-										</td>
-										<td class="py-2"><a
-										href="mailto:raymond@example.com">info@example.com</a></td>
-										<td class="py-2"> <a href="tel:5624685646">(562) 468-5646</a></td>
-										<td class="py-2 pl-5 wspace-no">2298 Locust Court, Artesia
-										</td>
-										<td class="py-2">12/07/2014</td>
-										<td class="py-2 text-right">
-											<div class="dropdown dropdown-no-icon" ngbDropdown>
-												<button class="btn btn-primary tp-btn-light sharp" type="button" ngbDropdownToggle><span class="fs--1">
-													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1">
-													<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="5" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="19" cy="12" r="2"></circle></g></svg>
-													</span>
-												</button>
-												<div class="dropdown-menu dropdown-menu-right border py-0" ngbDropdownMenu>
-													<div class="py-2"><a class="dropdown-item"  href="javascript:void(0);">Edit</a><a class="dropdown-item text-danger" href="javascript:void(0);">Delete</a></div>
-												</div>
-											</div>
-										</td>
-									</tr>
-									<tr class="btn-reveal-trigger">
-										<td class="py-2">
-											<div class="custom-control custom-checkbox mx-2">
-												<input type="checkbox" class="custom-control-input" id="checkbox7">
-												<label class="custom-control-label" for="checkbox7"></label>
-											</div>
-										</td>
-										<td class="py-3">
-											<a href="javascript:void(0);">
-												<div class="media d-flex align-items-center">
-													<div class="avatar avatar-xl mr-2">
-														<img class="rounded-circle img-fluid"
-														src="assets/images/avatar/1.png" alt="" width="30" />
-													</div>
-													<div class="media-body">
-														<h5 class="mb-0 fs--1">Michael Jenkins</h5>
-													</div>
-												</div>
-											</a>
-										</td>
-										<td class="py-2"><a
-										href="mailto:jenkins@example.com">info@example.com</a></td>
-										<td class="py-2"> <a href="tel:3026138829">(302) 613-8829</a></td>
-										<td class="py-2 pl-5 wspace-no">4678 Maud Street, Philadelphia
-										</td>
-										<td class="py-2">15/06/2014</td>
-										<td class="py-2 text-right">
-											<div class="dropdown dropdown-no-icon" ngbDropdown>
-												<button class="btn btn-primary tp-btn-light sharp" type="button" ngbDropdownToggle><span class="fs--1">
-													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1">
-													<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="5" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="19" cy="12" r="2"></circle></g></svg>
-													</span>
-												</button>
-												<div class="dropdown-menu dropdown-menu-right border py-0" ngbDropdownMenu>
-													<div class="py-2"><a class="dropdown-item"  href="javascript:void(0);">Edit</a><a class="dropdown-item text-danger" href="javascript:void(0);">Delete</a></div>
-												</div>
-											</div>
-										</td>
-									</tr>
-									<tr class="btn-reveal-trigger">
-										<td class="py-2">
-											<div class="custom-control custom-checkbox mx-2">
-												<input type="checkbox" class="custom-control-input" id="checkbox8">
-												<label class="custom-control-label" for="checkbox8"></label>
-											</div>
-										</td>
-										<td class="py-3">
-											<a href="javascript:void(0);">
-												<div class="media d-flex align-items-center">
-													<div class="avatar avatar-xl mr-2">
-														<img class="rounded-circle img-fluid"
-														src="assets/images/avatar/1.png" alt="" width="30" />
-													</div>
-													<div class="media-body">
-														<h5 class="mb-0 fs--1">Kristine Cadena</h5>
-													</div>
-												</div>
-											</a>
-										</td>
-										<td class="py-2"><a
-										href="mailto:cadena@example.com">info@example.com</a></td>
-										<td class="py-2"> <a href="tel:3172737814">(317) 273-7814</a></td>
-										<td class="py-2 pl-5 wspace-no">3412 Crestview Manor, Indianapolis</td>
-										<td class="py-2">15/04/2015</td>
-										<td class="py-2 text-right">
-											<div class="dropdown dropdown-no-icon" ngbDropdown>
-												<button class="btn btn-primary tp-btn-light sharp" type="button" ngbDropdownToggle><span class="fs--1">
-													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1">
-													<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="5" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="19" cy="12" r="2"></circle></g></svg>
-													</span>
-												</button>
-												<div class="dropdown-menu dropdown-menu-right border py-0" ngbDropdownMenu>
-													<div class="py-2"><a class="dropdown-item"  href="javascript:void(0);">Edit</a><a class="dropdown-item text-danger" href="javascript:void(0);">Delete</a></div>
-												</div>
-											</div>
-										</td>
-									</tr>
-									<tr class="btn-reveal-trigger">
-										<td class="py-2">
-											<div class="custom-control custom-checkbox mx-2">
-												<input type="checkbox" class="custom-control-input" id="checkbox9">
-												<label class="custom-control-label" for="checkbox9"></label>
-											</div>
-										</td>
-										<td class="py-3">
-											<a href="javascript:void(0);">
-												<div class="media d-flex align-items-center">
-													<div class="avatar avatar-xl mr-2">
-														<div class=""><img class="rounded-circle img-fluid"
-															src="assets/images/avatar/5.png" width="30" alt="" />
-														</div>
-													</div>
-													<div class="media-body">
-														<h5 class="mb-0 fs--1">Ricky Antony</h5>
-													</div>
-												</div>
-											</a>
-										</td>
-										<td class="py-2"><a
-										href="mailto:ricky@example.com">info@example.com</a></td>
-										<td class="py-2"> <a href="tel:2012001851">(201) 200-1851</a></td>
-										<td class="py-2 pl-5 wspace-no">2392 Main Avenue, Penasauka</td>
-										<td class="py-2">30/03/2018</td>
-										<td class="py-2 text-right">
-											<div class="dropdown dropdown-no-icon" ngbDropdown>
-												<button class="btn btn-primary tp-btn-light sharp" type="button" ngbDropdownToggle><span class="fs--1">
-													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1">
-													<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="5" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="19" cy="12" r="2"></circle></g></svg>
-													</span>
-												</button>
-												<div class="dropdown-menu dropdown-menu-right border py-0" ngbDropdownMenu>
-													<div class="py-2"><a class="dropdown-item"  href="javascript:void(0);">Edit</a><a class="dropdown-item text-danger" href="javascript:void(0);">Delete</a></div>
-												</div>
-											</div>
-										</td>
-									</tr>
-									<tr class="btn-reveal-trigger">
-										<td class="py-2">
-											<div class="custom-control custom-checkbox mx-2">
-												<input type="checkbox" class="custom-control-input" id="checkbox10">
-												<label class="custom-control-label" for="checkbox10"></label>
-											</div>
-										</td>
-										<td class="py-3">
-											<a href="javascript:void(0);">
-												<div class="media d-flex align-items-center">
-													<div class="avatar avatar-xl mr-2">
-														<img class="rounded-circle img-fluid"
-														src="assets/images/avatar/1.png" alt="" width="30" />
-													</div>
-													<div class="media-body">
-														<h5 class="mb-0 fs--1">Emma Watson</h5>
-													</div>
-												</div>
-											</a>
-										</td>
-										<td class="py-2"><a href="mailto:emma@example.com">info@example.com</a>
-										</td>
-										<td class="py-2"> <a href="tel:2122288403">(212) 228-8403</a></td>
-										<td class="py-2 pl-5 wspace-no">2289 5th Avenue, New York
-										</td>
-										<td class="py-2">11/07/2017</td>
-										<td class="py-2 text-right">
-											<div class="dropdown dropdown-no-icon" ngbDropdown>
-												<button class="btn btn-primary tp-btn-light sharp" type="button" ngbDropdownToggle><span class="fs--1">
-													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1">
-													<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="5" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="19" cy="12" r="2"></circle></g></svg>
-													</span>
-												</button>
-												<div class="dropdown-menu dropdown-menu-right border py-0" ngbDropdownMenu>
-													<div class="py-2"><a class="dropdown-item"  href="javascript:void(0);">Edit</a><a class="dropdown-item text-danger" href="javascript:void(0);">Delete</a></div>
-												</div>
-											</div>
-										</td>
-									</tr>
-									<tr class="btn-reveal-trigger">
-										<td class="py-2">
-											<div class="custom-control custom-checkbox mx-2">
-												<input type="checkbox" class="custom-control-input" id="checkbox11">
-												<label class="custom-control-label" for="checkbox11"></label>
-											</div>
-										</td>
-										<td class="py-3">
-											<a href="javascript:void(0);">
-												<div class="media d-flex align-items-center">
-													<div class="avatar avatar-xl mr-2">
-														<div class=""><img class="rounded-circle img-fluid"
-															src="assets/images/avatar/5.png" width="30" alt="" />
-														</div>
-													</div>
-													<div class="media-body">
-														<h5 class="mb-0 fs--1">Rowen Atkinson</h5>
-													</div>
-												</div>
-											</a>
-										</td>
-										<td class="py-2"><a href="mailto:rown@example.com">info@example.com</a>
-										</td>
-										<td class="py-2"> <a href="tel:2012001851">(201) 200-1851</a></td>
-										<td class="py-2 pl-5 wspace-no">112 Bostwick Avenue, Jersey City
-										</td>
-										<td class="py-2">05/04/2016</td>
-										<td class="py-2 text-right">
-											<div class="dropdown dropdown-no-icon" ngbDropdown>
-												<button class="btn btn-primary tp-btn-light sharp" type="button" ngbDropdownToggle><span class="fs--1">
-													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1">
-													<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="5" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="19" cy="12" r="2"></circle></g></svg>
-													</span>
-												</button>
-												<div class="dropdown-menu dropdown-menu-right border py-0" ngbDropdownMenu>
-													<div class="py-2"><a class="dropdown-item"  href="javascript:void(0);">Edit</a><a class="dropdown-item text-danger" href="javascript:void(0);">Delete</a></div>
-												</div>
-											</div>
-										</td>
-									</tr>
-									<tr class="btn-reveal-trigger">
-										<td class="py-2">
-											<div class="custom-control custom-checkbox mx-2">
-												<input type="checkbox" class="custom-control-input" id="checkbox12">
-												<label class="custom-control-label" for="checkbox12"></label>
-											</div>
-										</td>
-										<td class="py-3">
-											<a href="javascript:void(0);">
-												<div class="media d-flex align-items-center">
-													<div class="avatar avatar-xl mr-2">
-														<img class="rounded-circle img-fluid"
-														src="assets/images/avatar/1.png" alt="" width="30" />
-													</div>
-													<div class="media-body">
-														<h5 class="mb-0 fs--1">Antony Hopkins</h5>
-													</div>
-												</div>
-											</a>
-										</td>
-										<td class="py-2"><a
-										href="mailto:antony@example.com">info@example.com</a></td>
-										<td class="py-2"> <a href="tel:9013243127">(901) 324-3127</a></td>
-										<td class="py-2 pl-5 wspace-no">3448 Ile De France St #242</td>
-										<td class="py-2">05/04/2018</td>
-										<td class="py-2 text-right">
-											<div class="dropdown dropdown-no-icon" ngbDropdown>
-												<button class="btn btn-primary tp-btn-light sharp" type="button" ngbDropdownToggle><span class="fs--1">
-													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1">
-													<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="5" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="19" cy="12" r="2"></circle></g></svg>
-													</span>
-												</button>
-												<div class="dropdown-menu dropdown-menu-right border py-0" ngbDropdownMenu>
-													<div class="py-2"><a class="dropdown-item"  href="javascript:void(0);">Edit</a><a class="dropdown-item text-danger" href="javascript:void(0);">Delete</a></div>
-												</div>
-											</div>
-										</td>
-									</tr>
-									<tr class="btn-reveal-trigger">
-										<td class="py-2">
-											<div class="custom-control custom-checkbox mx-2">
-												<input type="checkbox" class="custom-control-input" id="checkbox13">
-												<label class="custom-control-label" for="checkbox13"></label>
-											</div>
-										</td>
-										<td class="py-3">
-											<a href="javascript:void(0);">
-												<div class="media d-flex align-items-center">
-													<div class="avatar avatar-xl mr-2">
-														<img class="rounded-circle img-fluid"
-														src="assets/images/avatar/1.png" alt="" width="30" />
-													</div>
-													<div class="media-body">
-														<h5 class="mb-0 fs--1">Jennifer Schramm</h5>
-													</div>
-												</div>
-											</a>
-										</td>
-										<td class="py-2"><a
-										href="mailto:jennifer@example.com">info@example.com</a></td>
-										<td class="py-2"> <a href="tel:8283829631">(828) 382-9631</a></td>
-										<td class="py-2 pl-5 wspace-no">659 Hannah Street, Charlotte
-										</td>
-										<td class="py-2">17/03/2016</td>
-										<td class="py-2 text-right">
-											<div class="dropdown dropdown-no-icon" ngbDropdown>
-												<button class="btn btn-primary tp-btn-light sharp" type="button" ngbDropdownToggle><span class="fs--1">
-													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1">
-													<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="5" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="19" cy="12" r="2"></circle></g></svg>
-													</span>
-												</button>
-												<div class="dropdown-menu dropdown-menu-right border py-0" ngbDropdownMenu>
-													<div class="py-2"><a class="dropdown-item"  href="javascript:void(0);">Edit</a><a class="dropdown-item text-danger" href="javascript:void(0);">Delete</a></div>
-												</div>
-											</div>
-										</td>
-									</tr>
-									<tr class="btn-reveal-trigger">
-										<td class="py-2">
-											<div class="custom-control custom-checkbox mx-2">
-												<input type="checkbox" class="custom-control-input" id="checkbox14">
-												<label class="custom-control-label" for="checkbox14"></label>
-											</div>
-										</td>
-										<td class="py-3">
-											<a href="javascript:void(0);">
-												<div class="media d-flex align-items-center">
-													<div class="avatar avatar-xl mr-2">
-														<div class=""><img class="rounded-circle img-fluid"
-															src="assets/images/avatar/5.png" width="30" alt="" />
-														</div>
-													</div>
-													<div class="media-body">
-														<h5 class="mb-0 fs--1">Raymond Mims</h5>
-													</div>
-												</div>
-											</a>
-										</td>
-										<td class="py-2"><a
-										href="mailto:raymond@example.com">info@example.com</a></td>
-										<td class="py-2"> <a href="tel:5624685646">(562) 468-5646</a></td>
-										<td class="py-2 pl-5 wspace-no">2298 Locust Court, Artesia
-										</td>
-										<td class="py-2">12/07/2014</td>
-										<td class="py-2 text-right">
-											<div class="dropdown dropdown-no-icon" ngbDropdown>
-												<button class="btn btn-primary tp-btn-light sharp" type="button" ngbDropdownToggle><span class="fs--1">
-													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1">
-													<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="5" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="19" cy="12" r="2"></circle></g></svg>
-													</span>
-												</button>
-												<div class="dropdown-menu dropdown-menu-right border py-0" ngbDropdownMenu>
-													<div class="py-2"><a class="dropdown-item"  href="javascript:void(0);">Edit</a><a class="dropdown-item text-danger" href="javascript:void(0);">Delete</a></div>
-												</div>
-											</div>
-										</td>
-									</tr>
-									<tr class="btn-reveal-trigger">
-										<td class="py-2">
-											<div class="custom-control custom-checkbox mx-2">
-												<input type="checkbox" class="custom-control-input" id="checkbox15">
-												<label class="custom-control-label" for="checkbox15"></label>
-											</div>
-										</td>
-										<td class="py-3">
-											<a href="javascript:void(0);">
-												<div class="media d-flex align-items-center">
-													<div class="avatar avatar-xl mr-2">
-														<img class="rounded-circle img-fluid"
-														src="assets/images/avatar/1.png" alt="" width="30" />
-													</div>
-													<div class="media-body">
-														<h5 class="mb-0 fs--1">Michael Jenkins</h5>
-													</div>
-												</div>
-											</a>
-										</td>
-										<td class="py-2"><a
-										href="mailto:jenkins@example.com">info@example.com</a></td>
-										<td class="py-2"> <a href="tel:3026138829">(302) 613-8829</a></td>
-										<td class="py-2 pl-5 wspace-no">4678 Maud Street, Philadelphia
-										</td>
-										<td class="py-2">15/06/2014</td>
-										<td class="py-2 text-right">
-											<div class="dropdown dropdown-no-icon" ngbDropdown>
-												<button class="btn btn-primary tp-btn-light sharp" type="button" ngbDropdownToggle><span class="fs--1">
-													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1">
-													<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="5" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="19" cy="12" r="2"></circle></g></svg>
-													</span>
-												</button>
-												<div class="dropdown-menu dropdown-menu-right border py-0" ngbDropdownMenu>
-													<div class="py-2"><a class="dropdown-item"  href="javascript:void(0);">Edit</a><a class="dropdown-item text-danger" href="javascript:void(0);">Delete</a></div>
-												</div>
-											</div>
-										</td>
-									</tr>
-									<tr class="btn-reveal-trigger">
-										<td class="py-2">
-											<div class="custom-control custom-checkbox mx-2">
-												<input type="checkbox" class="custom-control-input" id="checkbox16">
-												<label class="custom-control-label" for="checkbox16"></label>
-											</div>
-										</td>
-										<td class="py-3">
-											<a href="javascript:void(0);">
-												<div class="media d-flex align-items-center">
-													<div class="avatar avatar-xl mr-2">
-														<img class="rounded-circle img-fluid"
-														src="assets/images/avatar/1.png" alt="" width="30" />
-													</div>
-													<div class="media-body">
-														<h5 class="mb-0 fs--1">Kristine Cadena</h5>
-													</div>
-												</div>
-											</a>
-										</td>
-										<td class="py-2"><a
-										href="mailto:cadena@example.com">info@example.com</a></td>
-										<td class="py-2"> <a href="tel:3172737814">(317) 273-7814</a></td>
-										<td class="py-2 pl-5 wspace-no">3412 Crestview Manor, Indianapolis</td>
-										<td class="py-2">15/04/2015</td>
-										<td class="py-2 text-right">
-											<div class="dropdown dropdown-no-icon" ngbDropdown>
-												<button class="btn btn-primary tp-btn-light sharp" type="button" ngbDropdownToggle><span class="fs--1">
-													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1">
-													<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="5" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="19" cy="12" r="2"></circle></g></svg>
-													</span>
-												</button>
-												<div class="dropdown-menu dropdown-menu-right border py-0" ngbDropdownMenu>
-													<div class="py-2"><a class="dropdown-item"  href="javascript:void(0);">Edit</a><a class="dropdown-item text-danger" href="javascript:void(0);">Delete</a></div>
-												</div>
-											</div>
-										</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+      </div>
+      <div class="col-xl-9">
+        <div class="card m-0">
+          <div class="card-body py-3 py-md-2">
+            <div class="row align-items-center">
+              <div class="col-md-5 mb-3 mb-md-0">
+                <div class="media align-items-end">
+                  <span class="mr-2 mb-1">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g clip-path="url(#clip0)">
+                        <path
+                          d="M21 24H3C2.73478 24 2.48043 23.8946 2.29289 23.7071C2.10536 23.5196 2 23.2652 2 23V22.008C2.00287 20.4622 2.52021 18.9613 3.47044 17.742C4.42066 16.5227 5.74971 15.6544 7.248 15.274C7.46045 15.2219 7.64959 15.1008 7.78571 14.9296C7.92182 14.7583 7.9972 14.5467 8 14.328V13.322L6.883 12.206C6.6032 11.9313 6.38099 11.6036 6.22937 11.2419C6.07776 10.8803 5.99978 10.4921 6 10.1V5.96201C6.01833 4.41693 6.62821 2.93765 7.70414 1.82861C8.78007 0.719572 10.2402 0.0651427 11.784 5.16174e-06C12.5992 -0.00104609 13.4067 0.158488 14.1603 0.469498C14.9139 0.780509 15.5989 1.2369 16.1761 1.81263C16.7533 2.38835 17.2114 3.07213 17.5244 3.82491C17.8373 4.5777 17.999 5.38476 18 6.20001V10.1C17.9997 10.4949 17.9204 10.8857 17.7666 11.2495C17.6129 11.6132 17.388 11.9426 17.105 12.218L16 13.322V14.328C16.0029 14.5469 16.0784 14.7586 16.2147 14.9298C16.351 15.1011 16.5404 15.2221 16.753 15.274C18.251 15.6548 19.5797 16.5232 20.5298 17.7424C21.4798 18.9617 21.997 20.4624 22 22.008V23C22 23.2652 21.8946 23.5196 21.7071 23.7071C21.5196 23.8946 21.2652 24 21 24ZM4 22H20C19.9954 20.8996 19.6249 19.8319 18.9469 18.9651C18.2689 18.0983 17.3219 17.4816 16.255 17.212C15.6125 17.0494 15.0423 16.6779 14.6341 16.1558C14.2259 15.6337 14.0028 14.9907 14 14.328V12.908C14.0001 12.6428 14.1055 12.3885 14.293 12.201L15.703 10.792C15.7965 10.7026 15.8711 10.5952 15.9221 10.4763C15.9731 10.3574 15.9996 10.2294 16 10.1V6.20001C16.0017 5.09492 15.5671 4.03383 14.7907 3.24737C14.0144 2.46092 12.959 2.01265 11.854 2.00001C10.8264 2.04117 9.85379 2.47507 9.1367 3.21225C8.41962 3.94943 8.01275 4.93367 8 5.96201V10.1C7.99979 10.2266 8.0249 10.352 8.07384 10.4688C8.12278 10.5856 8.19458 10.6914 8.285 10.78L9.707 12.2C9.89455 12.3875 9.99994 12.6418 10 12.907V14.327C9.99724 14.9896 9.77432 15.6325 9.3663 16.1545C8.95827 16.6766 8.3883 17.0482 7.746 17.211C6.67872 17.4804 5.73137 18.0972 5.05318 18.9642C4.37498 19.8313 4.00447 20.8993 4 22Z"
+                          fill="black"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0">
+                          <rect width="24" height="24" fill="white" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </span>
+
+                  <div class="media-body ml-1">
+                    <p class="mb-1 fs-14">Toplam Kullanıcı Sayısı</p>
+                    <h3 class="mb-0 text-black font-w600 fs-20">10.000 Kişi</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-7 text-md-right">
+                <!-- <a href="javascript:void(0);" class="btn btn-outline-primary rounded btn-sm px-4">Active</a> -->
+                <a
+                  href="javascript:void(0);"
+                  class="btn btn-secondary rounded ml-2 btn-sm px-4"
+                  style="background-color: rgb(43, 230, 43); color: white"
+                  >Yeni Kullanıcı Ekle</a
+                >
+                <a
+                  href="javascript:void(0);"
+                  class="btn btn-secondary rounded ml-2 btn-sm px-4"
+                  >Düzenle</a
+                >
+                <a
+                  href="javascript:void(0);"
+                  class="btn btn-danger rounded ml-2 btn-sm px-4"
+                  >Sil</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-responsive-lg mb-0 table-striped">
+                <thead>
+                  <tr>
+                    <th class="">
+                      <div class="custom-control custom-checkbox mx-2">
+                        <input
+                          type="checkbox"
+                          class="custom-control-input"
+                          id="checkAll"
+                          (change)="checkUncheckAll($event)"
+                        />
+                        <label
+                          class="custom-control-label"
+                          for="checkAll"
+                        ></label>
+                      </div>
+                    </th>
+                    <th>Ad Soyad</th>
+                    <th>Email Adresi</th>
+                    <th>Telefon No</th>
+                    <th class="pl-5 width200">Şube/Adres</th>
+                    <th>Katılma Tarihi</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody id="customers">
+                  <tr class="btn-reveal-trigger">
+                    <td>
+                      <div class="custom-control custom-checkbox mx-2">
+                        <input
+                          type="checkbox"
+                          class="custom-control-input"
+                          id="checkbox1"
+                        />
+                        <label
+                          class="custom-control-label"
+                          for="checkbox1"
+                        ></label>
+                      </div>
+                    </td>
+                    <td class="py-3">
+                      <a href="javascript:void(0);">
+                        <div class="media d-flex align-items-center">
+                          <div class="avatar avatar-xl mr-2">
+                            <div class="">
+                              <img
+                                class="rounded-circle img-fluid"
+                                src="assets/images/avatar/5.png"
+                                width="30"
+                                alt=""
+                              />
+                            </div>
+                          </div>
+                          <div class="media-body">
+                            <h5 class="mb-0 fs--1">Ricky Antony</h5>
+                          </div>
+                        </div>
+                      </a>
+                    </td>
+                    <td class="py-2">
+                      <a href="mailto:ricky@example.com">info@example.com</a>
+                    </td>
+                    <td class="py-2">
+                      <a href="tel:2012001851">(201) 200-1851</a>
+                    </td>
+                    <td class="py-2 pl-5 wspace-no">
+                      2392 Main Avenue, Penasauka
+                    </td>
+                    <td class="py-2">30/03/2018</td>
+                    <td class="py-2 text-right">
+                      <div class="dropdown dropdown-no-icon" ngbDropdown>
+                        <button
+                          class="btn btn-primary tp-btn-light sharp"
+                          type="button"
+                          ngbDropdownToggle
+                        >
+                          <span class="fs--1">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              xmlns:xlink="http://www.w3.org/1999/xlink"
+                              width="18px"
+                              height="18px"
+                              viewBox="0 0 24 24"
+                              version="1.1"
+                            >
+                              <g
+                                stroke="none"
+                                stroke-width="1"
+                                fill="none"
+                                fill-rule="evenodd"
+                              >
+                                <rect x="0" y="0" width="24" height="24"></rect>
+                                <circle
+                                  fill="#000000"
+                                  cx="5"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                                <circle
+                                  fill="#000000"
+                                  cx="12"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                                <circle
+                                  fill="#000000"
+                                  cx="19"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                              </g>
+                            </svg>
+                          </span>
+                        </button>
+                        <div
+                          class="dropdown-menu dropdown-menu-right border py-0"
+                          ngbDropdownMenu
+                        >
+                          <div class="py-2">
+                            <a class="dropdown-item" href="javascript:void(0);"
+                              >Edit</a
+                            ><a
+                              class="dropdown-item text-danger"
+                              href="javascript:void(0);"
+                              >Delete</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="btn-reveal-trigger">
+                    <td class="py-2">
+                      <div class="custom-control custom-checkbox mx-2">
+                        <input
+                          type="checkbox"
+                          class="custom-control-input"
+                          id="checkbox2"
+                        />
+                        <label
+                          class="custom-control-label"
+                          for="checkbox2"
+                        ></label>
+                      </div>
+                    </td>
+                    <td class="py-3">
+                      <a href="javascript:void(0);">
+                        <div class="media d-flex align-items-center">
+                          <div class="avatar avatar-xl mr-2">
+                            <img
+                              class="rounded-circle img-fluid"
+                              src="assets/images/avatar/1.png"
+                              alt=""
+                              width="30"
+                            />
+                          </div>
+                          <div class="media-body">
+                            <h5 class="mb-0 fs--1">Emma Watson</h5>
+                          </div>
+                        </div>
+                      </a>
+                    </td>
+                    <td class="py-2">
+                      <a href="mailto:emma@example.com">info@example.com</a>
+                    </td>
+                    <td class="py-2">
+                      <a href="tel:2122288403">(212) 228-8403</a>
+                    </td>
+                    <td class="py-2 pl-5 wspace-no">
+                      2289 5th Avenue, New York
+                    </td>
+                    <td class="py-2">11/07/2017</td>
+                    <td class="py-2 text-right">
+                      <div class="dropdown dropdown-no-icon" ngbDropdown>
+                        <button
+                          class="btn btn-primary tp-btn-light sharp"
+                          type="button"
+                          ngbDropdownToggle
+                        >
+                          <span class="fs--1">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              xmlns:xlink="http://www.w3.org/1999/xlink"
+                              width="18px"
+                              height="18px"
+                              viewBox="0 0 24 24"
+                              version="1.1"
+                            >
+                              <g
+                                stroke="none"
+                                stroke-width="1"
+                                fill="none"
+                                fill-rule="evenodd"
+                              >
+                                <rect x="0" y="0" width="24" height="24"></rect>
+                                <circle
+                                  fill="#000000"
+                                  cx="5"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                                <circle
+                                  fill="#000000"
+                                  cx="12"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                                <circle
+                                  fill="#000000"
+                                  cx="19"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                              </g>
+                            </svg>
+                          </span>
+                        </button>
+                        <div
+                          class="dropdown-menu dropdown-menu-right border py-0"
+                          ngbDropdownMenu
+                        >
+                          <div class="py-2">
+                            <a class="dropdown-item" href="javascript:void(0);"
+                              >Edit</a
+                            ><a
+                              class="dropdown-item text-danger"
+                              href="javascript:void(0);"
+                              >Delete</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="btn-reveal-trigger">
+                    <td class="py-2">
+                      <div class="custom-control custom-checkbox mx-2">
+                        <input
+                          type="checkbox"
+                          class="custom-control-input"
+                          id="checkbox3"
+                        />
+                        <label
+                          class="custom-control-label"
+                          for="checkbox3"
+                        ></label>
+                      </div>
+                    </td>
+                    <td class="py-3">
+                      <a href="javascript:void(0);">
+                        <div class="media d-flex align-items-center">
+                          <div class="avatar avatar-xl mr-2">
+                            <div class="">
+                              <img
+                                class="rounded-circle img-fluid"
+                                src="assets/images/avatar/5.png"
+                                width="30"
+                                alt=""
+                              />
+                            </div>
+                          </div>
+                          <div class="media-body">
+                            <h5 class="mb-0 fs--1">Rowen Atkinson</h5>
+                          </div>
+                        </div>
+                      </a>
+                    </td>
+                    <td class="py-2">
+                      <a href="mailto:rown@example.com">info@example.com</a>
+                    </td>
+                    <td class="py-2">
+                      <a href="tel:2012001851">(201) 200-1851</a>
+                    </td>
+                    <td class="py-2 pl-5 wspace-no">
+                      112 Bostwick Avenue, Jersey City
+                    </td>
+                    <td class="py-2">05/04/2016</td>
+                    <td class="py-2 text-right">
+                      <div class="dropdown dropdown-no-icon" ngbDropdown>
+                        <button
+                          class="btn btn-primary tp-btn-light sharp"
+                          type="button"
+                          ngbDropdownToggle
+                        >
+                          <span class="fs--1">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              xmlns:xlink="http://www.w3.org/1999/xlink"
+                              width="18px"
+                              height="18px"
+                              viewBox="0 0 24 24"
+                              version="1.1"
+                            >
+                              <g
+                                stroke="none"
+                                stroke-width="1"
+                                fill="none"
+                                fill-rule="evenodd"
+                              >
+                                <rect x="0" y="0" width="24" height="24"></rect>
+                                <circle
+                                  fill="#000000"
+                                  cx="5"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                                <circle
+                                  fill="#000000"
+                                  cx="12"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                                <circle
+                                  fill="#000000"
+                                  cx="19"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                              </g>
+                            </svg>
+                          </span>
+                        </button>
+                        <div
+                          class="dropdown-menu dropdown-menu-right border py-0"
+                          ngbDropdownMenu
+                        >
+                          <div class="py-2">
+                            <a class="dropdown-item" href="javascript:void(0);"
+                              >Edit</a
+                            ><a
+                              class="dropdown-item text-danger"
+                              href="javascript:void(0);"
+                              >Delete</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="btn-reveal-trigger">
+                    <td class="py-2">
+                      <div class="custom-control custom-checkbox mx-2">
+                        <input
+                          type="checkbox"
+                          class="custom-control-input"
+                          id="checkbox4"
+                        />
+                        <label
+                          class="custom-control-label"
+                          for="checkbox4"
+                        ></label>
+                      </div>
+                    </td>
+                    <td class="py-3">
+                      <a href="javascript:void(0);">
+                        <div class="media d-flex align-items-center">
+                          <div class="avatar avatar-xl mr-2">
+                            <img
+                              class="rounded-circle img-fluid"
+                              src="assets/images/avatar/1.png"
+                              alt=""
+                              width="30"
+                            />
+                          </div>
+                          <div class="media-body">
+                            <h5 class="mb-0 fs--1">Antony Hopkins</h5>
+                          </div>
+                        </div>
+                      </a>
+                    </td>
+                    <td class="py-2">
+                      <a href="mailto:antony@example.com">info@example.com</a>
+                    </td>
+                    <td class="py-2">
+                      <a href="tel:9013243127">(901) 324-3127</a>
+                    </td>
+                    <td class="py-2 pl-5 wspace-no">
+                      3448 Ile De France St #242,
+                    </td>
+                    <td class="py-2">05/04/2018</td>
+                    <td class="py-2 text-right">
+                      <div class="dropdown dropdown-no-icon" ngbDropdown>
+                        <button
+                          class="btn btn-primary tp-btn-light sharp"
+                          type="button"
+                          ngbDropdownToggle
+                        >
+                          <span class="fs--1">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              xmlns:xlink="http://www.w3.org/1999/xlink"
+                              width="18px"
+                              height="18px"
+                              viewBox="0 0 24 24"
+                              version="1.1"
+                            >
+                              <g
+                                stroke="none"
+                                stroke-width="1"
+                                fill="none"
+                                fill-rule="evenodd"
+                              >
+                                <rect x="0" y="0" width="24" height="24"></rect>
+                                <circle
+                                  fill="#000000"
+                                  cx="5"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                                <circle
+                                  fill="#000000"
+                                  cx="12"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                                <circle
+                                  fill="#000000"
+                                  cx="19"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                              </g>
+                            </svg>
+                          </span>
+                        </button>
+                        <div
+                          class="dropdown-menu dropdown-menu-right border py-0"
+                          ngbDropdownMenu
+                        >
+                          <div class="py-2">
+                            <a class="dropdown-item" href="javascript:void(0);"
+                              >Edit</a
+                            ><a
+                              class="dropdown-item text-danger"
+                              href="javascript:void(0);"
+                              >Delete</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="btn-reveal-trigger">
+                    <td class="py-2">
+                      <div class="custom-control custom-checkbox mx-2">
+                        <input
+                          type="checkbox"
+                          class="custom-control-input"
+                          id="checkbox5"
+                        />
+                        <label
+                          class="custom-control-label"
+                          for="checkbox5"
+                        ></label>
+                      </div>
+                    </td>
+                    <td class="py-3">
+                      <a href="javascript:void(0);">
+                        <div class="media d-flex align-items-center">
+                          <div class="avatar avatar-xl mr-2">
+                            <img
+                              class="rounded-circle img-fluid"
+                              src="assets/images/avatar/1.png"
+                              alt=""
+                              width="30"
+                            />
+                          </div>
+                          <div class="media-body">
+                            <h5 class="mb-0 fs--1">Jennifer Schramm</h5>
+                          </div>
+                        </div>
+                      </a>
+                    </td>
+                    <td class="py-2">
+                      <a href="mailto:jennifer@example.com">info@example.com</a>
+                    </td>
+                    <td class="py-2">
+                      <a href="tel:8283829631">(828) 382-9631</a>
+                    </td>
+                    <td class="py-2 pl-5 wspace-no">
+                      659 Hannah Street, Charlotte
+                    </td>
+                    <td class="py-2">17/03/2016</td>
+                    <td class="py-2 text-right">
+                      <div class="dropdown dropdown-no-icon" ngbDropdown>
+                        <button
+                          class="btn btn-primary tp-btn-light sharp"
+                          type="button"
+                          ngbDropdownToggle
+                        >
+                          <span class="fs--1">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              xmlns:xlink="http://www.w3.org/1999/xlink"
+                              width="18px"
+                              height="18px"
+                              viewBox="0 0 24 24"
+                              version="1.1"
+                            >
+                              <g
+                                stroke="none"
+                                stroke-width="1"
+                                fill="none"
+                                fill-rule="evenodd"
+                              >
+                                <rect x="0" y="0" width="24" height="24"></rect>
+                                <circle
+                                  fill="#000000"
+                                  cx="5"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                                <circle
+                                  fill="#000000"
+                                  cx="12"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                                <circle
+                                  fill="#000000"
+                                  cx="19"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                              </g>
+                            </svg>
+                          </span>
+                        </button>
+                        <div
+                          class="dropdown-menu dropdown-menu-right border py-0"
+                          ngbDropdownMenu
+                        >
+                          <div class="py-2">
+                            <a class="dropdown-item" href="javascript:void(0);"
+                              >Edit</a
+                            ><a
+                              class="dropdown-item text-danger"
+                              href="javascript:void(0);"
+                              >Delete</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="btn-reveal-trigger">
+                    <td class="py-2">
+                      <div class="custom-control custom-checkbox mx-2">
+                        <input
+                          type="checkbox"
+                          class="custom-control-input"
+                          id="checkbox6"
+                        />
+                        <label
+                          class="custom-control-label"
+                          for="checkbox6"
+                        ></label>
+                      </div>
+                    </td>
+                    <td class="py-3">
+                      <a href="javascript:void(0);">
+                        <div class="media d-flex align-items-center">
+                          <div class="avatar avatar-xl mr-2">
+                            <div class="">
+                              <img
+                                class="rounded-circle img-fluid"
+                                src="assets/images/avatar/5.png"
+                                width="30"
+                                alt=""
+                              />
+                            </div>
+                          </div>
+                          <div class="media-body">
+                            <h5 class="mb-0 fs--1">Raymond Mims</h5>
+                          </div>
+                        </div>
+                      </a>
+                    </td>
+                    <td class="py-2">
+                      <a href="mailto:raymond@example.com">info@example.com</a>
+                    </td>
+                    <td class="py-2">
+                      <a href="tel:5624685646">(562) 468-5646</a>
+                    </td>
+                    <td class="py-2 pl-5 wspace-no">
+                      2298 Locust Court, Artesia
+                    </td>
+                    <td class="py-2">12/07/2014</td>
+                    <td class="py-2 text-right">
+                      <div class="dropdown dropdown-no-icon" ngbDropdown>
+                        <button
+                          class="btn btn-primary tp-btn-light sharp"
+                          type="button"
+                          ngbDropdownToggle
+                        >
+                          <span class="fs--1">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              xmlns:xlink="http://www.w3.org/1999/xlink"
+                              width="18px"
+                              height="18px"
+                              viewBox="0 0 24 24"
+                              version="1.1"
+                            >
+                              <g
+                                stroke="none"
+                                stroke-width="1"
+                                fill="none"
+                                fill-rule="evenodd"
+                              >
+                                <rect x="0" y="0" width="24" height="24"></rect>
+                                <circle
+                                  fill="#000000"
+                                  cx="5"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                                <circle
+                                  fill="#000000"
+                                  cx="12"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                                <circle
+                                  fill="#000000"
+                                  cx="19"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                              </g>
+                            </svg>
+                          </span>
+                        </button>
+                        <div
+                          class="dropdown-menu dropdown-menu-right border py-0"
+                          ngbDropdownMenu
+                        >
+                          <div class="py-2">
+                            <a class="dropdown-item" href="javascript:void(0);"
+                              >Edit</a
+                            ><a
+                              class="dropdown-item text-danger"
+                              href="javascript:void(0);"
+                              >Delete</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="btn-reveal-trigger">
+                    <td class="py-2">
+                      <div class="custom-control custom-checkbox mx-2">
+                        <input
+                          type="checkbox"
+                          class="custom-control-input"
+                          id="checkbox7"
+                        />
+                        <label
+                          class="custom-control-label"
+                          for="checkbox7"
+                        ></label>
+                      </div>
+                    </td>
+                    <td class="py-3">
+                      <a href="javascript:void(0);">
+                        <div class="media d-flex align-items-center">
+                          <div class="avatar avatar-xl mr-2">
+                            <img
+                              class="rounded-circle img-fluid"
+                              src="assets/images/avatar/1.png"
+                              alt=""
+                              width="30"
+                            />
+                          </div>
+                          <div class="media-body">
+                            <h5 class="mb-0 fs--1">Michael Jenkins</h5>
+                          </div>
+                        </div>
+                      </a>
+                    </td>
+                    <td class="py-2">
+                      <a href="mailto:jenkins@example.com">info@example.com</a>
+                    </td>
+                    <td class="py-2">
+                      <a href="tel:3026138829">(302) 613-8829</a>
+                    </td>
+                    <td class="py-2 pl-5 wspace-no">
+                      4678 Maud Street, Philadelphia
+                    </td>
+                    <td class="py-2">15/06/2014</td>
+                    <td class="py-2 text-right">
+                      <div class="dropdown dropdown-no-icon" ngbDropdown>
+                        <button
+                          class="btn btn-primary tp-btn-light sharp"
+                          type="button"
+                          ngbDropdownToggle
+                        >
+                          <span class="fs--1">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              xmlns:xlink="http://www.w3.org/1999/xlink"
+                              width="18px"
+                              height="18px"
+                              viewBox="0 0 24 24"
+                              version="1.1"
+                            >
+                              <g
+                                stroke="none"
+                                stroke-width="1"
+                                fill="none"
+                                fill-rule="evenodd"
+                              >
+                                <rect x="0" y="0" width="24" height="24"></rect>
+                                <circle
+                                  fill="#000000"
+                                  cx="5"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                                <circle
+                                  fill="#000000"
+                                  cx="12"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                                <circle
+                                  fill="#000000"
+                                  cx="19"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                              </g>
+                            </svg>
+                          </span>
+                        </button>
+                        <div
+                          class="dropdown-menu dropdown-menu-right border py-0"
+                          ngbDropdownMenu
+                        >
+                          <div class="py-2">
+                            <a class="dropdown-item" href="javascript:void(0);"
+                              >Edit</a
+                            ><a
+                              class="dropdown-item text-danger"
+                              href="javascript:void(0);"
+                              >Delete</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="btn-reveal-trigger">
+                    <td class="py-2">
+                      <div class="custom-control custom-checkbox mx-2">
+                        <input
+                          type="checkbox"
+                          class="custom-control-input"
+                          id="checkbox8"
+                        />
+                        <label
+                          class="custom-control-label"
+                          for="checkbox8"
+                        ></label>
+                      </div>
+                    </td>
+                    <td class="py-3">
+                      <a href="javascript:void(0);">
+                        <div class="media d-flex align-items-center">
+                          <div class="avatar avatar-xl mr-2">
+                            <img
+                              class="rounded-circle img-fluid"
+                              src="assets/images/avatar/1.png"
+                              alt=""
+                              width="30"
+                            />
+                          </div>
+                          <div class="media-body">
+                            <h5 class="mb-0 fs--1">Kristine Cadena</h5>
+                          </div>
+                        </div>
+                      </a>
+                    </td>
+                    <td class="py-2">
+                      <a href="mailto:cadena@example.com">info@example.com</a>
+                    </td>
+                    <td class="py-2">
+                      <a href="tel:3172737814">(317) 273-7814</a>
+                    </td>
+                    <td class="py-2 pl-5 wspace-no">
+                      3412 Crestview Manor, Indianapolis
+                    </td>
+                    <td class="py-2">15/04/2015</td>
+                    <td class="py-2 text-right">
+                      <div class="dropdown dropdown-no-icon" ngbDropdown>
+                        <button
+                          class="btn btn-primary tp-btn-light sharp"
+                          type="button"
+                          ngbDropdownToggle
+                        >
+                          <span class="fs--1">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              xmlns:xlink="http://www.w3.org/1999/xlink"
+                              width="18px"
+                              height="18px"
+                              viewBox="0 0 24 24"
+                              version="1.1"
+                            >
+                              <g
+                                stroke="none"
+                                stroke-width="1"
+                                fill="none"
+                                fill-rule="evenodd"
+                              >
+                                <rect x="0" y="0" width="24" height="24"></rect>
+                                <circle
+                                  fill="#000000"
+                                  cx="5"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                                <circle
+                                  fill="#000000"
+                                  cx="12"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                                <circle
+                                  fill="#000000"
+                                  cx="19"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                              </g>
+                            </svg>
+                          </span>
+                        </button>
+                        <div
+                          class="dropdown-menu dropdown-menu-right border py-0"
+                          ngbDropdownMenu
+                        >
+                          <div class="py-2">
+                            <a class="dropdown-item" href="javascript:void(0);"
+                              >Edit</a
+                            ><a
+                              class="dropdown-item text-danger"
+                              href="javascript:void(0);"
+                              >Delete</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="btn-reveal-trigger">
+                    <td class="py-2">
+                      <div class="custom-control custom-checkbox mx-2">
+                        <input
+                          type="checkbox"
+                          class="custom-control-input"
+                          id="checkbox9"
+                        />
+                        <label
+                          class="custom-control-label"
+                          for="checkbox9"
+                        ></label>
+                      </div>
+                    </td>
+                    <td class="py-3">
+                      <a href="javascript:void(0);">
+                        <div class="media d-flex align-items-center">
+                          <div class="avatar avatar-xl mr-2">
+                            <div class="">
+                              <img
+                                class="rounded-circle img-fluid"
+                                src="assets/images/avatar/5.png"
+                                width="30"
+                                alt=""
+                              />
+                            </div>
+                          </div>
+                          <div class="media-body">
+                            <h5 class="mb-0 fs--1">Ricky Antony</h5>
+                          </div>
+                        </div>
+                      </a>
+                    </td>
+                    <td class="py-2">
+                      <a href="mailto:ricky@example.com">info@example.com</a>
+                    </td>
+                    <td class="py-2">
+                      <a href="tel:2012001851">(201) 200-1851</a>
+                    </td>
+                    <td class="py-2 pl-5 wspace-no">
+                      2392 Main Avenue, Penasauka
+                    </td>
+                    <td class="py-2">30/03/2018</td>
+                    <td class="py-2 text-right">
+                      <div class="dropdown dropdown-no-icon" ngbDropdown>
+                        <button
+                          class="btn btn-primary tp-btn-light sharp"
+                          type="button"
+                          ngbDropdownToggle
+                        >
+                          <span class="fs--1">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              xmlns:xlink="http://www.w3.org/1999/xlink"
+                              width="18px"
+                              height="18px"
+                              viewBox="0 0 24 24"
+                              version="1.1"
+                            >
+                              <g
+                                stroke="none"
+                                stroke-width="1"
+                                fill="none"
+                                fill-rule="evenodd"
+                              >
+                                <rect x="0" y="0" width="24" height="24"></rect>
+                                <circle
+                                  fill="#000000"
+                                  cx="5"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                                <circle
+                                  fill="#000000"
+                                  cx="12"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                                <circle
+                                  fill="#000000"
+                                  cx="19"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                              </g>
+                            </svg>
+                          </span>
+                        </button>
+                        <div
+                          class="dropdown-menu dropdown-menu-right border py-0"
+                          ngbDropdownMenu
+                        >
+                          <div class="py-2">
+                            <a class="dropdown-item" href="javascript:void(0);"
+                              >Edit</a
+                            ><a
+                              class="dropdown-item text-danger"
+                              href="javascript:void(0);"
+                              >Delete</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="btn-reveal-trigger">
+                    <td class="py-2">
+                      <div class="custom-control custom-checkbox mx-2">
+                        <input
+                          type="checkbox"
+                          class="custom-control-input"
+                          id="checkbox10"
+                        />
+                        <label
+                          class="custom-control-label"
+                          for="checkbox10"
+                        ></label>
+                      </div>
+                    </td>
+                    <td class="py-3">
+                      <a href="javascript:void(0);">
+                        <div class="media d-flex align-items-center">
+                          <div class="avatar avatar-xl mr-2">
+                            <img
+                              class="rounded-circle img-fluid"
+                              src="assets/images/avatar/1.png"
+                              alt=""
+                              width="30"
+                            />
+                          </div>
+                          <div class="media-body">
+                            <h5 class="mb-0 fs--1">Emma Watson</h5>
+                          </div>
+                        </div>
+                      </a>
+                    </td>
+                    <td class="py-2">
+                      <a href="mailto:emma@example.com">info@example.com</a>
+                    </td>
+                    <td class="py-2">
+                      <a href="tel:2122288403">(212) 228-8403</a>
+                    </td>
+                    <td class="py-2 pl-5 wspace-no">
+                      2289 5th Avenue, New York
+                    </td>
+                    <td class="py-2">11/07/2017</td>
+                    <td class="py-2 text-right">
+                      <div class="dropdown dropdown-no-icon" ngbDropdown>
+                        <button
+                          class="btn btn-primary tp-btn-light sharp"
+                          type="button"
+                          ngbDropdownToggle
+                        >
+                          <span class="fs--1">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              xmlns:xlink="http://www.w3.org/1999/xlink"
+                              width="18px"
+                              height="18px"
+                              viewBox="0 0 24 24"
+                              version="1.1"
+                            >
+                              <g
+                                stroke="none"
+                                stroke-width="1"
+                                fill="none"
+                                fill-rule="evenodd"
+                              >
+                                <rect x="0" y="0" width="24" height="24"></rect>
+                                <circle
+                                  fill="#000000"
+                                  cx="5"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                                <circle
+                                  fill="#000000"
+                                  cx="12"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                                <circle
+                                  fill="#000000"
+                                  cx="19"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                              </g>
+                            </svg>
+                          </span>
+                        </button>
+                        <div
+                          class="dropdown-menu dropdown-menu-right border py-0"
+                          ngbDropdownMenu
+                        >
+                          <div class="py-2">
+                            <a class="dropdown-item" href="javascript:void(0);"
+                              >Edit</a
+                            ><a
+                              class="dropdown-item text-danger"
+                              href="javascript:void(0);"
+                              >Delete</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="btn-reveal-trigger">
+                    <td class="py-2">
+                      <div class="custom-control custom-checkbox mx-2">
+                        <input
+                          type="checkbox"
+                          class="custom-control-input"
+                          id="checkbox11"
+                        />
+                        <label
+                          class="custom-control-label"
+                          for="checkbox11"
+                        ></label>
+                      </div>
+                    </td>
+                    <td class="py-3">
+                      <a href="javascript:void(0);">
+                        <div class="media d-flex align-items-center">
+                          <div class="avatar avatar-xl mr-2">
+                            <div class="">
+                              <img
+                                class="rounded-circle img-fluid"
+                                src="assets/images/avatar/5.png"
+                                width="30"
+                                alt=""
+                              />
+                            </div>
+                          </div>
+                          <div class="media-body">
+                            <h5 class="mb-0 fs--1">Rowen Atkinson</h5>
+                          </div>
+                        </div>
+                      </a>
+                    </td>
+                    <td class="py-2">
+                      <a href="mailto:rown@example.com">info@example.com</a>
+                    </td>
+                    <td class="py-2">
+                      <a href="tel:2012001851">(201) 200-1851</a>
+                    </td>
+                    <td class="py-2 pl-5 wspace-no">
+                      112 Bostwick Avenue, Jersey City
+                    </td>
+                    <td class="py-2">05/04/2016</td>
+                    <td class="py-2 text-right">
+                      <div class="dropdown dropdown-no-icon" ngbDropdown>
+                        <button
+                          class="btn btn-primary tp-btn-light sharp"
+                          type="button"
+                          ngbDropdownToggle
+                        >
+                          <span class="fs--1">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              xmlns:xlink="http://www.w3.org/1999/xlink"
+                              width="18px"
+                              height="18px"
+                              viewBox="0 0 24 24"
+                              version="1.1"
+                            >
+                              <g
+                                stroke="none"
+                                stroke-width="1"
+                                fill="none"
+                                fill-rule="evenodd"
+                              >
+                                <rect x="0" y="0" width="24" height="24"></rect>
+                                <circle
+                                  fill="#000000"
+                                  cx="5"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                                <circle
+                                  fill="#000000"
+                                  cx="12"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                                <circle
+                                  fill="#000000"
+                                  cx="19"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                              </g>
+                            </svg>
+                          </span>
+                        </button>
+                        <div
+                          class="dropdown-menu dropdown-menu-right border py-0"
+                          ngbDropdownMenu
+                        >
+                          <div class="py-2">
+                            <a class="dropdown-item" href="javascript:void(0);"
+                              >Edit</a
+                            ><a
+                              class="dropdown-item text-danger"
+                              href="javascript:void(0);"
+                              >Delete</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="btn-reveal-trigger">
+                    <td class="py-2">
+                      <div class="custom-control custom-checkbox mx-2">
+                        <input
+                          type="checkbox"
+                          class="custom-control-input"
+                          id="checkbox12"
+                        />
+                        <label
+                          class="custom-control-label"
+                          for="checkbox12"
+                        ></label>
+                      </div>
+                    </td>
+                    <td class="py-3">
+                      <a href="javascript:void(0);">
+                        <div class="media d-flex align-items-center">
+                          <div class="avatar avatar-xl mr-2">
+                            <img
+                              class="rounded-circle img-fluid"
+                              src="assets/images/avatar/1.png"
+                              alt=""
+                              width="30"
+                            />
+                          </div>
+                          <div class="media-body">
+                            <h5 class="mb-0 fs--1">Antony Hopkins</h5>
+                          </div>
+                        </div>
+                      </a>
+                    </td>
+                    <td class="py-2">
+                      <a href="mailto:antony@example.com">info@example.com</a>
+                    </td>
+                    <td class="py-2">
+                      <a href="tel:9013243127">(901) 324-3127</a>
+                    </td>
+                    <td class="py-2 pl-5 wspace-no">
+                      3448 Ile De France St #242
+                    </td>
+                    <td class="py-2">05/04/2018</td>
+                    <td class="py-2 text-right">
+                      <div class="dropdown dropdown-no-icon" ngbDropdown>
+                        <button
+                          class="btn btn-primary tp-btn-light sharp"
+                          type="button"
+                          ngbDropdownToggle
+                        >
+                          <span class="fs--1">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              xmlns:xlink="http://www.w3.org/1999/xlink"
+                              width="18px"
+                              height="18px"
+                              viewBox="0 0 24 24"
+                              version="1.1"
+                            >
+                              <g
+                                stroke="none"
+                                stroke-width="1"
+                                fill="none"
+                                fill-rule="evenodd"
+                              >
+                                <rect x="0" y="0" width="24" height="24"></rect>
+                                <circle
+                                  fill="#000000"
+                                  cx="5"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                                <circle
+                                  fill="#000000"
+                                  cx="12"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                                <circle
+                                  fill="#000000"
+                                  cx="19"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                              </g>
+                            </svg>
+                          </span>
+                        </button>
+                        <div
+                          class="dropdown-menu dropdown-menu-right border py-0"
+                          ngbDropdownMenu
+                        >
+                          <div class="py-2">
+                            <a class="dropdown-item" href="javascript:void(0);"
+                              >Edit</a
+                            ><a
+                              class="dropdown-item text-danger"
+                              href="javascript:void(0);"
+                              >Delete</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="btn-reveal-trigger">
+                    <td class="py-2">
+                      <div class="custom-control custom-checkbox mx-2">
+                        <input
+                          type="checkbox"
+                          class="custom-control-input"
+                          id="checkbox13"
+                        />
+                        <label
+                          class="custom-control-label"
+                          for="checkbox13"
+                        ></label>
+                      </div>
+                    </td>
+                    <td class="py-3">
+                      <a href="javascript:void(0);">
+                        <div class="media d-flex align-items-center">
+                          <div class="avatar avatar-xl mr-2">
+                            <img
+                              class="rounded-circle img-fluid"
+                              src="assets/images/avatar/1.png"
+                              alt=""
+                              width="30"
+                            />
+                          </div>
+                          <div class="media-body">
+                            <h5 class="mb-0 fs--1">Jennifer Schramm</h5>
+                          </div>
+                        </div>
+                      </a>
+                    </td>
+                    <td class="py-2">
+                      <a href="mailto:jennifer@example.com">info@example.com</a>
+                    </td>
+                    <td class="py-2">
+                      <a href="tel:8283829631">(828) 382-9631</a>
+                    </td>
+                    <td class="py-2 pl-5 wspace-no">
+                      659 Hannah Street, Charlotte
+                    </td>
+                    <td class="py-2">17/03/2016</td>
+                    <td class="py-2 text-right">
+                      <div class="dropdown dropdown-no-icon" ngbDropdown>
+                        <button
+                          class="btn btn-primary tp-btn-light sharp"
+                          type="button"
+                          ngbDropdownToggle
+                        >
+                          <span class="fs--1">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              xmlns:xlink="http://www.w3.org/1999/xlink"
+                              width="18px"
+                              height="18px"
+                              viewBox="0 0 24 24"
+                              version="1.1"
+                            >
+                              <g
+                                stroke="none"
+                                stroke-width="1"
+                                fill="none"
+                                fill-rule="evenodd"
+                              >
+                                <rect x="0" y="0" width="24" height="24"></rect>
+                                <circle
+                                  fill="#000000"
+                                  cx="5"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                                <circle
+                                  fill="#000000"
+                                  cx="12"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                                <circle
+                                  fill="#000000"
+                                  cx="19"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                              </g>
+                            </svg>
+                          </span>
+                        </button>
+                        <div
+                          class="dropdown-menu dropdown-menu-right border py-0"
+                          ngbDropdownMenu
+                        >
+                          <div class="py-2">
+                            <a class="dropdown-item" href="javascript:void(0);"
+                              >Edit</a
+                            ><a
+                              class="dropdown-item text-danger"
+                              href="javascript:void(0);"
+                              >Delete</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="btn-reveal-trigger">
+                    <td class="py-2">
+                      <div class="custom-control custom-checkbox mx-2">
+                        <input
+                          type="checkbox"
+                          class="custom-control-input"
+                          id="checkbox14"
+                        />
+                        <label
+                          class="custom-control-label"
+                          for="checkbox14"
+                        ></label>
+                      </div>
+                    </td>
+                    <td class="py-3">
+                      <a href="javascript:void(0);">
+                        <div class="media d-flex align-items-center">
+                          <div class="avatar avatar-xl mr-2">
+                            <div class="">
+                              <img
+                                class="rounded-circle img-fluid"
+                                src="assets/images/avatar/5.png"
+                                width="30"
+                                alt=""
+                              />
+                            </div>
+                          </div>
+                          <div class="media-body">
+                            <h5 class="mb-0 fs--1">Raymond Mims</h5>
+                          </div>
+                        </div>
+                      </a>
+                    </td>
+                    <td class="py-2">
+                      <a href="mailto:raymond@example.com">info@example.com</a>
+                    </td>
+                    <td class="py-2">
+                      <a href="tel:5624685646">(562) 468-5646</a>
+                    </td>
+                    <td class="py-2 pl-5 wspace-no">
+                      2298 Locust Court, Artesia
+                    </td>
+                    <td class="py-2">12/07/2014</td>
+                    <td class="py-2 text-right">
+                      <div class="dropdown dropdown-no-icon" ngbDropdown>
+                        <button
+                          class="btn btn-primary tp-btn-light sharp"
+                          type="button"
+                          ngbDropdownToggle
+                        >
+                          <span class="fs--1">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              xmlns:xlink="http://www.w3.org/1999/xlink"
+                              width="18px"
+                              height="18px"
+                              viewBox="0 0 24 24"
+                              version="1.1"
+                            >
+                              <g
+                                stroke="none"
+                                stroke-width="1"
+                                fill="none"
+                                fill-rule="evenodd"
+                              >
+                                <rect x="0" y="0" width="24" height="24"></rect>
+                                <circle
+                                  fill="#000000"
+                                  cx="5"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                                <circle
+                                  fill="#000000"
+                                  cx="12"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                                <circle
+                                  fill="#000000"
+                                  cx="19"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                              </g>
+                            </svg>
+                          </span>
+                        </button>
+                        <div
+                          class="dropdown-menu dropdown-menu-right border py-0"
+                          ngbDropdownMenu
+                        >
+                          <div class="py-2">
+                            <a class="dropdown-item" href="javascript:void(0);"
+                              >Edit</a
+                            ><a
+                              class="dropdown-item text-danger"
+                              href="javascript:void(0);"
+                              >Delete</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="btn-reveal-trigger">
+                    <td class="py-2">
+                      <div class="custom-control custom-checkbox mx-2">
+                        <input
+                          type="checkbox"
+                          class="custom-control-input"
+                          id="checkbox15"
+                        />
+                        <label
+                          class="custom-control-label"
+                          for="checkbox15"
+                        ></label>
+                      </div>
+                    </td>
+                    <td class="py-3">
+                      <a href="javascript:void(0);">
+                        <div class="media d-flex align-items-center">
+                          <div class="avatar avatar-xl mr-2">
+                            <img
+                              class="rounded-circle img-fluid"
+                              src="assets/images/avatar/1.png"
+                              alt=""
+                              width="30"
+                            />
+                          </div>
+                          <div class="media-body">
+                            <h5 class="mb-0 fs--1">Michael Jenkins</h5>
+                          </div>
+                        </div>
+                      </a>
+                    </td>
+                    <td class="py-2">
+                      <a href="mailto:jenkins@example.com">info@example.com</a>
+                    </td>
+                    <td class="py-2">
+                      <a href="tel:3026138829">(302) 613-8829</a>
+                    </td>
+                    <td class="py-2 pl-5 wspace-no">
+                      4678 Maud Street, Philadelphia
+                    </td>
+                    <td class="py-2">15/06/2014</td>
+                    <td class="py-2 text-right">
+                      <div class="dropdown dropdown-no-icon" ngbDropdown>
+                        <button
+                          class="btn btn-primary tp-btn-light sharp"
+                          type="button"
+                          ngbDropdownToggle
+                        >
+                          <span class="fs--1">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              xmlns:xlink="http://www.w3.org/1999/xlink"
+                              width="18px"
+                              height="18px"
+                              viewBox="0 0 24 24"
+                              version="1.1"
+                            >
+                              <g
+                                stroke="none"
+                                stroke-width="1"
+                                fill="none"
+                                fill-rule="evenodd"
+                              >
+                                <rect x="0" y="0" width="24" height="24"></rect>
+                                <circle
+                                  fill="#000000"
+                                  cx="5"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                                <circle
+                                  fill="#000000"
+                                  cx="12"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                                <circle
+                                  fill="#000000"
+                                  cx="19"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                              </g>
+                            </svg>
+                          </span>
+                        </button>
+                        <div
+                          class="dropdown-menu dropdown-menu-right border py-0"
+                          ngbDropdownMenu
+                        >
+                          <div class="py-2">
+                            <a class="dropdown-item" href="javascript:void(0);"
+                              >Edit</a
+                            ><a
+                              class="dropdown-item text-danger"
+                              href="javascript:void(0);"
+                              >Delete</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="btn-reveal-trigger">
+                    <td class="py-2">
+                      <div class="custom-control custom-checkbox mx-2">
+                        <input
+                          type="checkbox"
+                          class="custom-control-input"
+                          id="checkbox16"
+                        />
+                        <label
+                          class="custom-control-label"
+                          for="checkbox16"
+                        ></label>
+                      </div>
+                    </td>
+                    <td class="py-3">
+                      <a href="javascript:void(0);">
+                        <div class="media d-flex align-items-center">
+                          <div class="avatar avatar-xl mr-2">
+                            <img
+                              class="rounded-circle img-fluid"
+                              src="assets/images/avatar/1.png"
+                              alt=""
+                              width="30"
+                            />
+                          </div>
+                          <div class="media-body">
+                            <h5 class="mb-0 fs--1">Kristine Cadena</h5>
+                          </div>
+                        </div>
+                      </a>
+                    </td>
+                    <td class="py-2">
+                      <a href="mailto:cadena@example.com">info@example.com</a>
+                    </td>
+                    <td class="py-2">
+                      <a href="tel:3172737814">(317) 273-7814</a>
+                    </td>
+                    <td class="py-2 pl-5 wspace-no">
+                      3412 Crestview Manor, Indianapolis
+                    </td>
+                    <td class="py-2">15/04/2015</td>
+                    <td class="py-2 text-right">
+                      <div class="dropdown dropdown-no-icon" ngbDropdown>
+                        <button
+                          class="btn btn-primary tp-btn-light sharp"
+                          type="button"
+                          ngbDropdownToggle
+                        >
+                          <span class="fs--1">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              xmlns:xlink="http://www.w3.org/1999/xlink"
+                              width="18px"
+                              height="18px"
+                              viewBox="0 0 24 24"
+                              version="1.1"
+                            >
+                              <g
+                                stroke="none"
+                                stroke-width="1"
+                                fill="none"
+                                fill-rule="evenodd"
+                              >
+                                <rect x="0" y="0" width="24" height="24"></rect>
+                                <circle
+                                  fill="#000000"
+                                  cx="5"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                                <circle
+                                  fill="#000000"
+                                  cx="12"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                                <circle
+                                  fill="#000000"
+                                  cx="19"
+                                  cy="12"
+                                  r="2"
+                                ></circle>
+                              </g>
+                            </svg>
+                          </span>
+                        </button>
+                        <div
+                          class="dropdown-menu dropdown-menu-right border py-0"
+                          ngbDropdownMenu
+                        >
+                          <div class="py-2">
+                            <a class="dropdown-item" href="javascript:void(0);"
+                              >Edit</a
+                            ><a
+                              class="dropdown-item text-danger"
+                              href="javascript:void(0);"
+                              >Delete</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <!--**********************************
 	Content body end

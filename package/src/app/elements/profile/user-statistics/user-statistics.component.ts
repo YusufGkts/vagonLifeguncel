@@ -1,21 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
-
-
+import { Component, Input, OnInit } from '@angular/core';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-user-statistics',
   templateUrl: './user-statistics.component.html',
-  styleUrls: ['./user-statistics.component.css']
+  styleUrls: ['./user-statistics.component.css'],
 })
 export class UserStatisticsComponent implements OnInit {
-
   constructor(private modalService: NgbModal) {}
 
-  ngOnInit(): void {
-  }
-  
-	open(content:any) {
-		this.modalService.open(content);
-	}
+  ngOnInit(): void {}
 
+  open(content: any) {
+    this.modalService.open(content);
+  }
 }

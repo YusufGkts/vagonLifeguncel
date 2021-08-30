@@ -2,19 +2,20 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Injectable } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import {SharedService} from './shared.service';
+import { SharedService } from './shared.service';
 import { NgbdSortableHeader } from './sortable.directive';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ChartsModule } from 'ng2-charts';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { NestableModule } from 'ngx-nestable';
-import { NgxSpinnerModule } from "ngx-spinner";
+import { NgxSpinnerModule } from 'ngx-spinner';
 import { LightboxModule } from 'ngx-lightbox';
 
 import { FullCalendarModule } from '@fullcalendar/angular';
@@ -23,16 +24,14 @@ import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
 import interactionPlugin from '@fullcalendar/interaction';
 
-
-
 FullCalendarModule.registerPlugins([
   dayGridPlugin,
   timeGridPlugin,
   listPlugin,
-  interactionPlugin
+  interactionPlugin,
 ]);
 
-import { MetismenuAngularModule } from "@metismenu/angular";
+import { MetismenuAngularModule } from '@metismenu/angular';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
@@ -40,12 +39,8 @@ import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { NgxDropzoneModule } from 'ngx-dropzone';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 
-
-
-
-
 import { MatListModule } from '@angular/material/list';
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
@@ -55,34 +50,32 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
-import {MatCardModule} from '@angular/material/card';
-import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatRadioModule} from '@angular/material/radio';
-import {DragDropModule} from '@angular/cdk/drag-drop';
-import {MatChipsModule} from '@angular/material/chips';
-import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatCardModule } from '@angular/material/card';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatRadioModule } from '@angular/material/radio';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatDividerModule} from '@angular/material/divider';
-import {MatExpansionModule} from '@angular/material/expansion';
-import {MatSelectModule} from '@angular/material/select';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatPaginatorModule} from '@angular/material/paginator';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
-import {MatSliderModule} from '@angular/material/slider';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import {MatRippleModule} from '@angular/material/core';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
-import {MatSortModule} from '@angular/material/sort';
-import {MatStepperModule} from '@angular/material/stepper';
-import {MatTableModule} from '@angular/material/table';
-import {MatTooltipModule} from '@angular/material/tooltip';
-import {MatTreeModule} from '@angular/material/tree';
-
-
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatSelectModule } from '@angular/material/select';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatRippleModule } from '@angular/material/core';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSortModule } from '@angular/material/sort';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatTableModule } from '@angular/material/table';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatTreeModule } from '@angular/material/tree';
 
 /* #########################  SITE PAGES COMPONENT ###################*/
 
@@ -94,14 +87,11 @@ import { LoadingComponent } from './elements/loading/loading.component';
 import { NavHeaderComponent } from './elements/nav-header/nav-header.component';
 import { NavigationComponent } from './elements/navigation/navigation.component';
 
-
-
 import { ProfileComponent } from './apps/profile/profile.component';
 import { UserStatisticsComponent } from './elements/profile/user-statistics/user-statistics.component';
 import { InterestComponent } from './elements/profile/interest/interest.component';
 import { LatestNewsComponent } from './elements/profile/latest-news/latest-news.component';
 import { HighlightsComponent } from './elements/profile/highlights/highlights.component';
-
 
 import { PostDetailsComponent } from './apps/post-details/post-details.component';
 
@@ -118,7 +108,6 @@ import { OrderComponent } from './apps/shop/order/order.component';
 import { CheckoutComponent } from './apps/shop/checkout/checkout.component';
 import { InvoiceComponent } from './apps/shop/invoice/invoice.component';
 import { EcomCustomersComponent } from './apps/shop/ecom-customers/ecom-customers.component';
-
 
 import { ApexComponent } from './charts/apex/apex.component';
 import { LineComponent } from './charts/apex/line/line.component';
@@ -223,8 +212,6 @@ import { ChartjsDoughnutComponent } from './charts/chartjs/chartjs-doughnut/char
 import { ChartjsRadarComponent } from './charts/chartjs/chartjs-radar/chartjs-radar.component';
 import { ChartjsPieComponent } from './charts/chartjs/chartjs-pie/chartjs-pie.component';
 import { ChartjsBubbleComponent } from './charts/chartjs/chartjs-bubble/chartjs-bubble.component';
-
-
 
 import { AccordionComponent } from './bootstrap/accordion/accordion.component';
 import { AlertComponent } from './bootstrap/alert/alert.component';
@@ -367,10 +354,6 @@ import { CardsComponent } from './bootstrap/cards/cards.component';
 import { TypographyComponent } from './bootstrap/typography/typography.component';
 import { GridComponent } from './bootstrap/grid/grid.component';
 
-
-
-
-
 import { DzmtAutocompleteComponent } from './material/dzmt-autocomplete/dzmt-autocomplete.component';
 import { DzmtAutocompleteDisplayComponent } from './material/dzmt-autocomplete/dzmt-autocomplete-display/dzmt-autocomplete-display.component';
 import { DzmtAutocompleteFilterComponent } from './material/dzmt-autocomplete/dzmt-autocomplete-filter/dzmt-autocomplete-filter.component';
@@ -420,11 +403,26 @@ import { DatepickerStartDateComponent } from './material/dzmt-datepicker/datepic
 import { DatepickerTouchUiComponent } from './material/dzmt-datepicker/datepicker-touch-ui/datepicker-touch-ui.component';
 import { DatepickerSelectedValueComponent } from './material/dzmt-datepicker/datepicker-selected-value/datepicker-selected-value.component';
 import { DzmtDialogComponent } from './material/dzmt-dialog/dzmt-dialog.component';
-import { HeaderScrollbarActionComponent, DialogContentExampleDialog } from './material/dzmt-dialog/header-scrollbar-action/header-scrollbar-action.component';
-import { InjectingDataComponent, DialogDataExampleDialog} from './material/dzmt-dialog/injecting-data/injecting-data.component';
-import { DialogElementsComponent, DialogElementsExampleDialog} from './material/dzmt-dialog/dialog-elements/dialog-elements.component';
-import { DialogFromMenuComponent, DialogFromMenuExampleDialog } from './material/dzmt-dialog/dialog-from-menu/dialog-from-menu.component';
-import { DialogOverviewComponent, DialogOverviewExampleDialog } from './material/dzmt-dialog/dialog-overview/dialog-overview.component';
+import {
+  HeaderScrollbarActionComponent,
+  DialogContentExampleDialog,
+} from './material/dzmt-dialog/header-scrollbar-action/header-scrollbar-action.component';
+import {
+  InjectingDataComponent,
+  DialogDataExampleDialog,
+} from './material/dzmt-dialog/injecting-data/injecting-data.component';
+import {
+  DialogElementsComponent,
+  DialogElementsExampleDialog,
+} from './material/dzmt-dialog/dialog-elements/dialog-elements.component';
+import {
+  DialogFromMenuComponent,
+  DialogFromMenuExampleDialog,
+} from './material/dzmt-dialog/dialog-from-menu/dialog-from-menu.component';
+import {
+  DialogOverviewComponent,
+  DialogOverviewExampleDialog,
+} from './material/dzmt-dialog/dialog-overview/dialog-overview.component';
 import { DzmtDividerComponent } from './material/dzmt-divider/dzmt-divider.component';
 import { DzmtExpansionComponent } from './material/dzmt-expansion/dzmt-expansion.component';
 import { ExpandCollapseAllTogglesComponent } from './material/dzmt-expansion/expand-collapse-all-toggles/expand-collapse-all-toggles.component';
@@ -613,7 +611,6 @@ import { AllSales2Component } from './elements/widget/charts/all-sales2/all-sale
 import { ElementsComponent } from './forms/elements/elements.component';
 import { FormValidateComponent } from './forms/form-validate/form-validate.component';
 
-
 import { RegisterComponent } from './pages/register/register.component';
 import { LoginComponent } from './pages/login/login.component';
 import { LockScreenComponent } from './pages/lock-screen/lock-screen.component';
@@ -651,7 +648,7 @@ import { CustomerListComponent } from './customer-list/customer-list.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 
 import { Dashboard2Component } from './dashboard2/dashboard2.component';
-
+import { PaymentComponent } from './payments/payment.component';
 
 @NgModule({
   declarations: [
@@ -663,22 +660,21 @@ import { Dashboard2Component } from './dashboard2/dashboard2.component';
     LoadingComponent,
     NavHeaderComponent,
     NavigationComponent,
-    
-    
+
     ProfileComponent,
     UserStatisticsComponent,
     InterestComponent,
     LatestNewsComponent,
     HighlightsComponent,
-    
+
     PostDetailsComponent,
-    
+
     ComposeComponent,
     InboxComponent,
     ReadComponent,
-    
+
     CalenderComponent,
-    
+
     ProductGridComponent,
     ProductListComponent,
     ProductDetailComponent,
@@ -686,7 +682,7 @@ import { Dashboard2Component } from './dashboard2/dashboard2.component';
     CheckoutComponent,
     InvoiceComponent,
     EcomCustomersComponent,
-    
+
     ApexComponent,
     LineComponent,
     BasicLineChartComponent,
@@ -790,9 +786,7 @@ import { Dashboard2Component } from './dashboard2/dashboard2.component';
     ChartjsRadarComponent,
     ChartjsPieComponent,
     ChartjsBubbleComponent,
-    
-    
-    
+
     AccordionComponent,
     AlertComponent,
     NavHeaderComponent,
@@ -893,7 +887,7 @@ import { Dashboard2Component } from './dashboard2/dashboard2.component';
     TableComponent,
     TableBasicComponent,
     TableSortableComponent,
-	  TableFilteringComponent,
+    TableFilteringComponent,
     TablePaginationComponent,
     TableCompleteComponent,
     NgbdSortableHeader,
@@ -935,9 +929,8 @@ import { Dashboard2Component } from './dashboard2/dashboard2.component';
     CardsComponent,
     TypographyComponent,
     GridComponent,
-    
-    
-    
+    PaymentComponent,
+
     DzmtAutocompleteComponent,
     DzmtAutocompleteDisplayComponent,
     DzmtAutocompleteFilterComponent,
@@ -989,19 +982,19 @@ import { Dashboard2Component } from './dashboard2/dashboard2.component';
     DzmtDialogComponent,
     HeaderScrollbarActionComponent,
     DialogContentExampleDialog,
-    
+
     InjectingDataComponent,
     DialogDataExampleDialog,
-    
+
     DialogElementsComponent,
     DialogElementsExampleDialog,
-    
+
     DialogFromMenuComponent,
     DialogFromMenuExampleDialog,
-    
+
     DialogOverviewComponent,
     DialogOverviewExampleDialog,
-    
+
     DzmtDividerComponent,
     DzmtExpansionComponent,
     ExpandCollapseAllTogglesComponent,
@@ -1149,10 +1142,10 @@ import { Dashboard2Component } from './dashboard2/dashboard2.component';
     BasicToolbarComponent,
     MultiRowToolbarComponent,
     ToolbarOverviewComponent,
-    
+
     NestableComponent,
     LightGalleryComponent,
-    
+
     WidgetComponent,
     Timeline1Component,
     Timeline2Component,
@@ -1187,10 +1180,10 @@ import { Dashboard2Component } from './dashboard2/dashboard2.component';
     SalesStatusComponent,
     AllSales1Component,
     AllSales2Component,
-    
+
     ElementsComponent,
     FormValidateComponent,
-    
+
     RegisterComponent,
     LoginComponent,
     LockScreenComponent,
@@ -1224,7 +1217,6 @@ import { Dashboard2Component } from './dashboard2/dashboard2.component';
     CustomerListComponent,
     ReviewsComponent,
     Dashboard2Component,
-   
   ],
   imports: [
     BrowserModule,
@@ -1244,8 +1236,7 @@ import { Dashboard2Component } from './dashboard2/dashboard2.component';
     PerfectScrollbarModule,
     NgxDropzoneModule,
     CarouselModule,
-    
-    
+
     MatListModule,
     MatAutocompleteModule,
     MatFormFieldModule,
@@ -1283,9 +1274,8 @@ import { Dashboard2Component } from './dashboard2/dashboard2.component';
     MatTableModule,
     MatTooltipModule,
     MatTreeModule,
-    
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

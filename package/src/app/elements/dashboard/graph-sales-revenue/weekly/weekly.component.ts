@@ -13,8 +13,7 @@ import {
   ApexFill,
   ApexTooltip,
   ApexGrid,
-} from "ng-apexcharts";
-
+} from 'ng-apexcharts';
 
 export type ChartOptions = {
   series?: ApexAxisChartSeries | any;
@@ -33,50 +32,60 @@ export type ChartOptions = {
   grid?: ApexGrid | any;
 };
 
-
 @Component({
   selector: 'app-weekly',
   templateUrl: './weekly.component.html',
-  styleUrls: ['./weekly.component.css']
+  styleUrls: ['./weekly.component.css'],
 })
 export class WeeklyComponent implements OnInit {
-  
-  
-  @ViewChild("chart") chart: ChartComponent;
+  @ViewChild('chart') chart: ChartComponent;
   public chartOptions: Partial<ChartOptions>;
-  
+
   constructor() {
-    
     // console.log(this.data);
     // alert(this.data + "test");
     this.chartOptions = {
-      series: [{
-        data: [50, 35, 10, 45, 40, 50, 60, 35, 10, 70, 34, 35]
-      }],
+      series: [
+        {
+          data: [50, 35, 10, 45, 40, 50, 60, 35, 10, 70, 34, 35],
+        },
+      ],
       chart: {
         height: 350,
         type: 'area',
-        toolbar:{
-          show:false
+        toolbar: {
+          show: false,
         },
       },
-      colors: ["#222fb9"],
+      colors: ['#222fb9'],
       dataLabels: {
-        enabled: false
+        enabled: false,
       },
       stroke: {
-        width:4,
-        curve: 'smooth'
+        width: 4,
+        curve: 'smooth',
       },
       xaxis: {
-        categories: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December",],
-			  labels: {
+        categories: [
+          'January',
+          'February',
+          'March',
+          'April',
+          'May',
+          'June',
+          'July',
+          'August',
+          'September',
+          'October',
+          'November',
+          'December',
+        ],
+        labels: {
           style: {
-            colors:'#2130b8',
+            colors: '#2130b8',
             // fontSize: '13px',
             // fontFamily: 'Poppins',
             // fontWeight: 400,
-            
           },
         },
       },
@@ -87,11 +96,10 @@ export class WeeklyComponent implements OnInit {
             fontSize: '13px',
             fontFamily: 'Poppins',
             /* fontWeight: 400 */
-            
           },
-          formatter: function (value:any) {
+          formatter: function (value: any) {
             return value;
-          }
+          },
         },
       },
       /* fill:{
@@ -100,15 +108,11 @@ export class WeeklyComponent implements OnInit {
       }, */
       tooltip: {
         x: {
-          format: 'dd/MM/yy HH:mm'
+          format: 'dd/MM/yy HH:mm',
         },
       },
     };
   }
-  
-  ngOnInit(): void {
-  }
-  
- 
 
+  ngOnInit(): void {}
 }

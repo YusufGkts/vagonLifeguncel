@@ -8,7 +8,7 @@
           aria-expanded="false"
         >
           <i class="flaticon-381-networking"></i>
-          <span class="nav-text">Dashboard</span>
+          <span class="nav-text">Admin Panel</span>
         </a>
         <ul
           aria-expanded="false"
@@ -16,103 +16,24 @@
         >
           <li>
             <a
-              class="{{
-                currentHref == '/admin/index' || currentHref == '/admin'
-                  ? 'mm-active'
-                  : ''
-              }}"
-              [routerLink]="['/admin/index']"
-              >Dashboard Light</a
-            >
-          </li>
-          <li>
-            <a
-              class="{{ currentHref == '/admin/index-2' ? 'mm-active' : '' }}"
-              [routerLink]="['/admin/index-2']"
-              >Dashboard Dark</a
-            >
-          </li>
-          <li>
-            <a
-              class="{{ currentHref == '/admin/analytics' ? 'mm-active' : '' }}"
-              [routerLink]="['/admin/analytics']"
-              >Analytics</a
-            >
-          </li>
-          <li>
-            <a
               class="{{ currentHref == '/admin/events' ? 'mm-active' : '' }}"
               [routerLink]="['/admin/events']"
-              >Events</a
-            >
-          </li>
-          <!-- <li>
-            <a
-              class="{{
-                currentHref == '/admin/order-list' ? 'mm-active' : ''
-              }}"
-              [routerLink]="['/admin/order-list']"
-              >Order List</a
-            >
-          </li> -->
-          <li>
-            <a
-              class="{{
-                currentHref == '/admin/customer-list' ? 'mm-active' : ''
-              }}"
-              [routerLink]="['/admin/customer-list']"
-              >Customer List</a
+              >Genel Satış Analizi</a
             >
           </li>
           <li>
             <a
-              class="{{ currentHref == '/admin/reviews' ? 'mm-active' : '' }}"
-              [routerLink]="['/admin/reviews']"
-              >Reviews</a
-            >
-          </li>
-        </ul>
-      </li>
-      <li [ngClass]="{ 'mm-active': apsArray.indexOf(currentHref) > -1 }">
-        <a
-          class="has-arrow ai-icon"
-          href="javascript:void()"
-          aria-expanded="false"
-        >
-          <i class="flaticon-381-television"></i>
-          <span class="nav-text">Apps</span>
-        </a>
-        <ul
-          aria-expanded="false"
-          [ngClass]="{ 'mm-show': apsArray.indexOf(currentHref) > -1 }"
-        >
-          <li>
-            <a
-              [routerLink]="['/admin/app-profile']"
               class="{{
-                currentHref == '/admin/app-profile' ? 'mm-active' : ''
+                currentHref == '/admin/satis-istatistikleri' ? 'mm-active' : ''
               }}"
-              >Profile</a
+              [routerLink]="['/admin/satis-istatistikleri']"
+              >Satış İstatistikleri</a
             >
           </li>
+
           <li>
-            <a
-              [routerLink]="['/admin/post-details']"
-              class="{{
-                currentHref == '/admin/post-details' ? 'mm-active' : ''
-              }}"
-              >Post Details</a
-            >
-          </li>
-          <li
-            [ngClass]="{
-              'mm-active':
-                apsArray.indexOf(currentHref) > 1 &&
-                apsArray.indexOf(currentHref) < 5
-            }"
-          >
             <a class="has-arrow" href="javascript:void()" aria-expanded="false"
-              >Email</a
+              >Panel Gece/Gündüz Modları</a
             >
             <ul
               aria-expanded="false"
@@ -123,6 +44,27 @@
               }"
             >
               <li>
+                <a
+                  class="{{
+                    currentHref == '/admin/index-2' ? 'mm-active' : ''
+                  }}"
+                  [routerLink]="['/admin/index-2']"
+                  >Panel Gece Modu</a
+                >
+              </li>
+              <li>
+                <a
+                  class="{{
+                    currentHref == '/admin/index' || currentHref == '/admin'
+                      ? 'mm-active'
+                      : ''
+                  }}"
+                  [routerLink]="['/admin/index']"
+                  >Panel Gündüz Modu</a
+                >
+              </li>
+
+              <!-- <li>
                 <a
                   [routerLink]="['/admin/email-compose']"
                   class="{{
@@ -148,9 +90,85 @@
                   }}"
                   >Read</a
                 >
-              </li>
+              </li> -->
             </ul>
           </li>
+
+          <!-- <li>
+            <a
+              class="{{
+                currentHref == '/admin/order-list' ? 'mm-active' : ''
+              }}"
+              [routerLink]="['/admin/order-list']"
+              >Order List</a
+            >
+          </li> -->
+
+          <!-- <li>
+            <a
+              class="{{ currentHref == '/admin/reviews' ? 'mm-active' : '' }}"
+              [routerLink]="['/admin/reviews']"
+              >Reviews</a
+            >
+          </li> -->
+        </ul>
+      </li>
+      <li [ngClass]="{ 'mm-active': apsArray.indexOf(currentHref) > -1 }">
+        <a
+          class="has-arrow ai-icon"
+          href="javascript:void()"
+          aria-expanded="false"
+        >
+          <i class="flaticon-381-television"></i>
+          <span class="nav-text">Kullanıcılar</span>
+        </a>
+        <ul
+          aria-expanded="false"
+          [ngClass]="{ 'mm-show': apsArray.indexOf(currentHref) > -1 }"
+        >
+          <li>
+            <a
+              [routerLink]="['/admin/kullanıcı-listesi']"
+              class="{{
+                currentHref == '/kullanıcı-listesi' ? 'mm-active' : ''
+              }}"
+              >Kullanıcı Listesi</a
+            >
+          </li>
+          <li>
+            <a
+              [routerLink]="['/admin/app-profile']"
+              class="{{
+                currentHref == '/admin/app-profile' ? 'mm-active' : ''
+              }}"
+              >Yeni Kullanıcı Ekle</a
+            >
+          </li>
+          <!-- <li>
+            <a
+              [routerLink]="['/admin/app-profile']"
+              class="{{
+                currentHref == '/admin/app-profile' ? 'mm-active' : ''
+              }}"
+              >Kullanıcıları Düzenle</a
+            >
+          </li> -->
+          <!-- <li>
+            <a
+              [routerLink]="['/admin/post-details']"
+              class="{{
+                currentHref == '/admin/post-details' ? 'mm-active' : ''
+              }}"
+              >Post Details</a
+            >
+          </li> -->
+          <!-- <li
+            [ngClass]="{
+              'mm-active':
+                apsArray.indexOf(currentHref) > 1 &&
+                apsArray.indexOf(currentHref) < 5
+            }"
+          ></li>
           <li><a [routerLink]="['/admin/app-calender']">Calendar</a></li>
           <li [ngClass]="{ 'mm-active': apsArray.indexOf(currentHref) > 4 }">
             <a class="has-arrow" href="javascript:void()" aria-expanded="false"
@@ -189,17 +207,7 @@
                   >Product Details</a
                 >
               </li>
-              <li>
-                <a
-                  [routerLink]="['/admin/ecom-product-order']"
-                  class="{{
-                    currentHref == '/admin/ecom-product-order'
-                      ? 'mm-active'
-                      : ''
-                  }}"
-                  >Order</a
-                >
-              </li>
+
               <li>
                 <a
                   [routerLink]="['/admin/ecom-checkout']"
@@ -218,33 +226,12 @@
                   >Invoice</a
                 >
               </li>
-              <li>
-                <a
-                  [routerLink]="['/admin/ecom-customers']"
-                  class="{{
-                    currentHref == '/admin/ecom-customers' ? 'mm-active' : ''
-                  }}"
-                  >Customers</a
-                >
-              </li>
             </ul>
-          </li>
+          </li> -->
         </ul>
       </li>
-      <li [ngClass]="{ 'mm-active': chartsArray.indexOf(currentHref) > -1 }">
-        <a
-          class="has-arrow ai-icon"
-          href="javascript:void()"
-          aria-expanded="false"
-        >
-          <i class="flaticon-381-controls-3"></i>
-          <span class="nav-text">Siparişler</span>
-        </a>
-        <ul
-          aria-expanded="false"
-          [ngClass]="{ 'mm-show': chartsArray.indexOf(currentHref) > -1 }"
-        >
-          <!-- <li [ngClass]="{ 'mm-active': chartsArray.indexOf(currentHref) > 0 }">
+
+      <!-- <li [ngClass]="{ 'mm-active': chartsArray.indexOf(currentHref) > 0 }">
             <a class="has-arrow" href="javascript:void()" aria-expanded="false"
               >Apex Chart</a
             >
@@ -407,17 +394,7 @@
               </li>
             </ul>
           </li>-->
-          <li>
-            <a
-              class="{{
-                currentHref == '/admin/order-list' ? 'mm-active' : ''
-              }}"
-              [routerLink]="['/admin/order-list']"
-              >Sipariş Listesi</a
-            >
-          </li>
-        </ul>
-      </li>
+
       <!-- <li [ngClass]="{ 'mm-active': bootstrapArray.indexOf(currentHref) > -1 }">
         <a
           class="has-arrow ai-icon"
@@ -637,13 +614,22 @@
           aria-expanded="false"
         >
           <i class="flaticon-381-layer-1"></i>
-          <span class="nav-text">Material</span>
+          <span class="nav-text">Müşteriler/Cariler</span>
         </a>
         <ul
           aria-expanded="false"
           [ngClass]="{ 'mm-show': materialArray.indexOf(currentHref) > -1 }"
         >
           <li>
+            <a
+              class="{{
+                currentHref == '/admin/cari-listesi' ? 'mm-active' : ''
+              }}"
+              [routerLink]="['/admin/cari-listesi']"
+              >Cari Listesi</a
+            >
+          </li>
+          <!-- <li>
             <a
               [routerLink]="['/admin/mat-autocomplete']"
               class="{{
@@ -933,11 +919,76 @@
               }}"
               >Toolbar</a
             >
+          </li> -->
+
+          <!-- <li>
+            <a class="has-arrow" href="javascript:void()" aria-expanded="false"
+              >Cari Detay</a
+            >
+            <ul
+              aria-expanded="false"
+              [ngClass]="{
+                'mm-show':
+                  apsArray.indexOf(currentHref) > 1 &&
+                  apsArray.indexOf(currentHref) < 5
+              }"
+            >
+              <a
+                class="{{
+                  currentHref == '/admin/app-profile' ? 'mm-active' : ''
+                }}"
+                [routerLink]="['/admin/app-profile']"
+                >Cari Bilgileri</a
+              >
+
+              <li>
+                <a
+                  class="{{
+                    currentHref == '/admin/events' ? 'mm-active' : ''
+                  }}"
+                  [routerLink]="['/admin/order-list']"
+                  >Cari Sipariş Geçmişi</a
+                >
+              </li>
+            </ul>
+          </li> -->
+        </ul>
+      </li>
+      <li [ngClass]="{ 'mm-active': chartsArray.indexOf(currentHref) > -1 }">
+        <a
+          class="has-arrow ai-icon"
+          href="javascript:void()"
+          aria-expanded="false"
+        >
+          <i class="flaticon-381-controls-3"></i>
+          <span class="nav-text">Siparişler</span>
+        </a>
+        <ul
+          aria-expanded="false"
+          [ngClass]="{ 'mm-show': chartsArray.indexOf(currentHref) > -1 }"
+        >
+          <li>
+            <a
+              class="{{
+                currentHref == '/admin/siparis-listesi' ? 'mm-active' : ''
+              }}"
+              [routerLink]="['/admin/siparis-listesi']"
+              >Sipariş Listesi</a
+            >
+          </li>
+          <li>
+            <a
+              [routerLink]="['/admin/ecom-product-order']"
+              class="{{
+                currentHref == '/admin/ecom-product-order' ? 'mm-active' : ''
+              }}"
+              >Sipariş Durum Bilgileri</a
+            >
           </li>
         </ul>
       </li>
 
-      <li [ngClass]="{ 'mm-active': pluginsArray.indexOf(currentHref) > -1 }">
+      <!-- <li [ngClass]="{ 'mm-active': pluginsArray.indexOf(currentHref) > -1 }">
         <a
           class="has-arrow ai-icon"
           href="javascript:void()"
@@ -969,7 +1020,7 @@
             >
           </li>
         </ul>
-      </li>
+      </li> -->
       <li class="{{ currentHref == '/admin/widget-basic' ? 'mm-active' : '' }}">
         <a
           [routerLink]="['/admin/widget-basic']"
@@ -980,7 +1031,7 @@
           aria-expanded="false"
         >
           <i class="flaticon-381-settings-2"></i>
-          <span class="nav-text">Widget</span>
+          <span class="nav-text">Ayarlar</span>
         </a>
       </li>
       <li [ngClass]="{ 'mm-active': formsArray.indexOf(currentHref) > -1 }">
@@ -990,7 +1041,7 @@
           aria-expanded="false"
         >
           <i class="flaticon-381-notepad"></i>
-          <span class="nav-text">Forms</span>
+          <span class="nav-text">Bildirim Merkezi</span>
         </a>
         <ul
           aria-expanded="false"
@@ -1060,7 +1111,9 @@
   </div>
 </div>
 
-<div
+<!-- <input type='text' class="form-control d-none" id='datetimepicker1' /> -->
+
+<!-- <div
   class="event-sidebar dz-scroll"
   id="eventSidebar"
   [ngClass]="{
@@ -1071,7 +1124,6 @@
 >
   <div class="card shadow-none rounded-0 bg-transparent h-auto mb-0">
     <div class="card-body text-center event-calender pb-2">
-      <!-- <input type='text' class="form-control d-none" id='datetimepicker1' /> -->
       <ngb-datepicker
         #dp
         [(ngModel)]="model"
@@ -1131,4 +1183,4 @@
       </a>
     </div>
   </div>
-</div>
+</div> -->
