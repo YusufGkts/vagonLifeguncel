@@ -19,6 +19,7 @@ export class ProfileComponent implements OnInit {
   customerPayments: payments[];
   customerPayment: any = [];
   totalPayment: number = 0;
+  allPayments: number = 0;
 
   constructor(
     private modalService: NgbModal,
@@ -48,6 +49,10 @@ export class ProfileComponent implements OnInit {
     this.customerOrders.forEach((a) => {
       console.log(a.totle_revenue);
       this.totalPayment = this.totalPayment + a.totle_revenue;
+    });
+
+    this.customerPayment.forEach((j) => {
+      this.allPayments = this.allPayments + j.payment_total;
     });
   }
 

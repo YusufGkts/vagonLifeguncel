@@ -3,8 +3,8 @@
   <div class="container-fluid">
     <div class="row mb-5 align-items-center">
       <div class="col-xl-4 align-self-start" style="margin-top: 1rem">
-        <div class="card mb-3 bgl-primary">
-          <div class="card-body px-4 py-3">
+        <div class="card mb-3 bgl-primary" style="background-color: #7fcdbf">
+          <div class="media-body ml-1" class="card-body px-4 py-3">
             <div class="media align-items-center">
               <span class="mr-4">
                 <svg
@@ -20,7 +20,7 @@
                   />
                 </svg>
               </span>
-              <div class="media-body ml-1">
+              <div>
                 <h5 class="mb-0 text-primary font-w600">Müşteriler/Cariler</h5>
               </div>
             </div>
@@ -82,7 +82,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-12">
+      <div class="col-xl-12">
         <div class="table-responsive">
           <table
             id="example5"
@@ -93,7 +93,7 @@
               table-responsive-xl
               dataTablesCard
               dataTable
-              fs-13
+              fs-14
             "
           >
             <thead>
@@ -124,6 +124,7 @@
                 <th>Konum/Adres</th>
                 <th>Son Sipariş Tarihi</th>
                 <th>Toplam Alışveriş</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
@@ -154,7 +155,7 @@
                 <td>{{ customer.ticket_ordered }}</td>
                 <td>{{ customer.location }}</td>
                 <td>{{ customer.last_order }}</td>
-                <td class="text-primary font-w500">
+                <td colspan="2" class="text-primary font-w500">
                   {{ customer.total_spent }}
                 </td>
                 <!-- <td class="d-flex">

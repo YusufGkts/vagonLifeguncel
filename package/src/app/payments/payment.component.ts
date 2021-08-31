@@ -5,7 +5,7 @@ export interface payments {
   payment_name: string;
   payment_type: string;
   payment_date: string;
-  payment_total: string;
+  payment_total: number;
   payment_company: string;
   payment_status: string;
 }
@@ -15,7 +15,7 @@ export const payment: payments[] = [
     payment_name: 'Cive Saluve',
     payment_type: 'Kredi Kartı',
     payment_date: '20/08/2021',
-    payment_total: '150',
+    payment_total: 150,
     payment_company: 'Ziraat Bankası',
     payment_status: 'Tamamlandı',
   },
@@ -24,7 +24,7 @@ export const payment: payments[] = [
     payment_name: 'Bella Simatupang',
     payment_type: 'Havale',
     payment_date: '20/08/2021',
-    payment_total: '200',
+    payment_total: 200,
     payment_company: 'Garanti Bankası',
     payment_status: 'Onay Bekliyor',
   },
@@ -33,7 +33,7 @@ export const payment: payments[] = [
     payment_name: 'Kevin Hurt',
     payment_type: 'Havale',
     payment_date: '20/08/2021',
-    payment_total: '200',
+    payment_total: 200,
     payment_company: 'Ziraat Bankası',
     payment_status: 'Onay Bekliyor',
   },
@@ -42,7 +42,7 @@ export const payment: payments[] = [
     payment_name: 'Bella Simatupang',
     payment_type: 'Kredi Kartı',
     payment_date: '20/08/2021',
-    payment_total: '200',
+    payment_total: 200,
     payment_company: 'Garanti Bankası',
     payment_status: 'Onay Bekliyor',
   },
@@ -51,7 +51,7 @@ export const payment: payments[] = [
     payment_name: 'Kevin Hurt',
     payment_type: 'Havale',
     payment_date: '20/08/2021',
-    payment_total: '200',
+    payment_total: 20,
     payment_company: 'Ziraat Bankası',
     payment_status: 'Onay Bekliyor',
   },

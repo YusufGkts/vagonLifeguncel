@@ -342,8 +342,8 @@
                                   <th>Ad Soyad</th>
                                   <th>Ödeme Şekli</th>
                                   <th>Ödeme Firması</th>
-                                  <th>Tutar</th>
                                   <th>Ödeme Durumu</th>
+                                  <th>Tutar(TL)</th>
                                 </tr>
                               </thead>
                               <tbody>
@@ -358,13 +358,23 @@
                                   <td>{{ payment.payment_name }}</td>
                                   <td>{{ payment.payment_type }}</td>
                                   <td>{{ payment.payment_company }}</td>
-                                  <td>{{ payment.payment_total }}</td>
                                   <td class="{{ payment.payment_status }}">
                                     <strong>{{
                                       payment.payment_status
                                     }}</strong>
                                   </td>
+                                  <td>{{ payment.payment_total }} TL</td>
                                 </tr>
+
+                                <td colspan="3">
+                                  <strong> Yapılan Toplam Ödeme:</strong>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                  <strong> {{ allPayments }} TL </strong>
+                                </td>
                               </tbody>
                             </table>
 

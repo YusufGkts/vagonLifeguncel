@@ -1,19 +1,17 @@
 .deznav{
     background-color: #7FCDBF;
-    color:#3D5B58!important;
+    
 
   
 }
-.metismenu{
-    color:#3D5B58!important;
-}
+
 .deznav>.deznav-scroll>.metismenu>li>a>span{
     color:#3D5B58!important;
+    font-weight: 500;
 
 }
-.deznav>.deznav-scroll>.metismenu>li>a>ul>li>a{
-    color:#3D5B58!important;
+ .deznav>.deznav-scroll>.metismenu>li>a>ul>li>a{
+    color:#ffffff!important;
 
-}
-
+} 
 
