@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, PipeTransform } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { TableFilteringComponent } from '../bootstrap/table/table-filtering/table-filtering.component';
 
 export interface order {
   order_id?: string;
@@ -7,10 +8,10 @@ export interface order {
   order_name: string;
   customer_name: string;
   location: string;
-  order_pck: string;
+  order_pck: number;
   order_total_pck: string;
   refund: string;
-  totle_revenue: string;
+  totle_revenue: number;
   refund_class: string;
 }
 
@@ -21,10 +22,10 @@ export const ORDERS: order[] = [
     order_name: 'The Story Of Danaou Taba (Musical Drama)',
     customer_name: 'Bella Simatupang',
     location: 'London, US',
-    order_pck: '1 pcs',
+    order_pck: 1,
     order_total_pck: '567k left',
     refund: 'NO',
-    totle_revenue: '$125,70',
+    totle_revenue: 125,
     refund_class: 'text-black',
   },
   {
@@ -33,10 +34,10 @@ export const ORDERS: order[] = [
     order_name: 'The Story Of Danaou Taba (Musical Drama)',
     customer_name: 'Kevin Hurt',
     location: 'Medan, Indonesia',
-    order_pck: '1 pcs',
+    order_pck: 1,
     order_total_pck: '567k left',
     refund: 'NO',
-    totle_revenue: '$536,00',
+    totle_revenue: 536,
     refund_class: 'text-black',
   },
   {
@@ -45,10 +46,10 @@ export const ORDERS: order[] = [
     order_name: 'The Story Of Danaou Taba (Musical Drama)',
     customer_name: 'Bella Simatupang',
     location: 'Jakarta, Indonesia',
-    order_pck: '1 pcs',
+    order_pck: 1,
     order_total_pck: '567k left',
     refund: 'Refund',
-    totle_revenue: '$536,00',
+    totle_revenue: 536,
     refund_class: 'text-danger',
   },
   {
@@ -57,10 +58,10 @@ export const ORDERS: order[] = [
     order_name: 'The Story Of Danaou Taba (Musical Drama)',
     customer_name: 'Kevin Hurt',
     location: 'Sydney, Australia',
-    order_pck: '1 pcs',
+    order_pck: 1,
     order_total_pck: '567k left',
     refund: 'NO',
-    totle_revenue: '$65,22',
+    totle_revenue: 65,
     refund_class: 'text-black',
   },
   {
@@ -69,10 +70,10 @@ export const ORDERS: order[] = [
     order_name: 'The Story Of Danaou Taba (Musical Drama)',
     customer_name: 'Bella Simatupang',
     location: 'London,US',
-    order_pck: '1 pcs',
+    order_pck: 1,
     order_total_pck: '567k left',
     refund: 'NO',
-    totle_revenue: '$44,00',
+    totle_revenue: 44,
     refund_class: 'text-black',
   },
   {
@@ -81,10 +82,10 @@ export const ORDERS: order[] = [
     order_name: 'The Story Of Danaou Taba (Musical Drama)',
     customer_name: 'Bella Simatupang',
     location: 'London,US',
-    order_pck: '1 pcs',
+    order_pck: 1,
     order_total_pck: '567k left',
     refund: 'Refund',
-    totle_revenue: '$51,50',
+    totle_revenue: 51,
     refund_class: 'text-danger',
   },
   {
@@ -93,10 +94,10 @@ export const ORDERS: order[] = [
     order_name: 'The Story Of Danaou Taba (Musical Drama)',
     customer_name: 'Kevin Hurt',
     location: 'Jakarta, Indonesia',
-    order_pck: '1 pcs',
+    order_pck: 1,
     order_total_pck: '567k left',
     refund: 'Refund',
-    totle_revenue: '$124,55',
+    totle_revenue: 124,
     refund_class: 'text-danger',
   },
   {
@@ -105,10 +106,10 @@ export const ORDERS: order[] = [
     order_name: 'The Story Of Danaou Taba (Musical Drama)',
     customer_name: 'Bella Simatupang',
     location: 'Penang, Malaysia',
-    order_pck: '1 pcs',
+    order_pck: 1,
     order_total_pck: '567k left',
     refund: 'NO',
-    totle_revenue: '$536,00',
+    totle_revenue: 536,
     refund_class: 'text-black',
   },
   {
@@ -117,10 +118,10 @@ export const ORDERS: order[] = [
     order_name: 'The Story Of Danaou Taba (Musical Drama)',
     customer_name: 'Kevin Hurt',
     location: 'Sydney, Australia',
-    order_pck: '1 pcs',
+    order_pck: 1,
     order_total_pck: '567k left',
     refund: 'NO',
-    totle_revenue: '$65,22',
+    totle_revenue: 65,
     refund_class: 'text-black',
   },
   {
@@ -129,10 +130,10 @@ export const ORDERS: order[] = [
     order_name: 'The Story Of Danaou Taba (Musical Drama)',
     customer_name: 'Bella Simatupang',
     location: 'London,US',
-    order_pck: '1 pcs',
+    order_pck: 1,
     order_total_pck: '567k left',
     refund: 'NO',
-    totle_revenue: '$44,00',
+    totle_revenue: 44,
     refund_class: 'text-black',
   },
   {
@@ -141,10 +142,10 @@ export const ORDERS: order[] = [
     order_name: 'The Story Of Danaou Taba (Musical Drama)',
     customer_name: 'Bella Simatupang',
     location: 'London,US',
-    order_pck: '1 pcs',
+    order_pck: 1,
     order_total_pck: '567k left',
     refund: 'Refund',
-    totle_revenue: '$51,50',
+    totle_revenue: 51,
     refund_class: 'text-danger',
   },
 ];
@@ -155,14 +156,21 @@ export const ORDERS: order[] = [
   styleUrls: ['./order-list.component.css'],
 })
 export class OrderListComponent implements OnInit {
+  totalRevenue: number = 0;
+  filteredOrders: any;
   constructor(private router: Router, private route: ActivatedRoute) {
     this.updateOrderListing();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.orders.forEach((a) => {
+      console.log(a.totle_revenue);
+      this.totalRevenue = this.totalRevenue + a.totle_revenue;
+    });
+  }
 
   page = 1;
-  pageSize = 10;
+  pageSize = 100000;
   collectionSize = ORDERS.length;
   orders: order[];
 

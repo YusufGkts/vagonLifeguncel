@@ -4,6 +4,7 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { Customer } from 'src/app/customer-list/customer-list.component';
 import { order, ORDERS } from 'src/app/order-list/order-list.component';
 import { payments, payment } from 'src/app/payments/payment.component';
+import { isTemplateExpression } from 'typescript';
 
 @Component({
   selector: 'app-profile',
@@ -17,6 +18,8 @@ export class ProfileComponent implements OnInit {
   orderName: any;
   customerPayments: payments[];
   customerPayment: any = [];
+  totalPayment: number = 0;
+
   constructor(
     private modalService: NgbModal,
     private router: Router,
@@ -40,6 +43,11 @@ export class ProfileComponent implements OnInit {
         this.customerPayment.push(x);
       }
       console.log(this.customerPayment);
+    });
+
+    this.customerOrders.forEach((a) => {
+      console.log(a.totle_revenue);
+      this.totalPayment = this.totalPayment + a.totle_revenue;
     });
   }
 

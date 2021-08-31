@@ -263,20 +263,22 @@
                                   <td class="{{ order.refund_class }}">
                                     <strong>{{ order.refund }}</strong>
                                   </td>
-                                  <td>
-                                    <a
-                                      href="javascript:void(0);"
-                                      class="
-                                        btn
-                                        text-primary
-                                        bgl-primary
-                                        rounded
-                                        btn-sm
-                                      "
-                                      >{{ order.totle_revenue }}</a
-                                    >
-                                  </td>
+                                  <td>{{ order.totle_revenue }} TL</td>
                                 </tr>
+                                <td><strong>Toplam:</strong></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                  <strong>
+                                    {{ customerOrders.length }}
+                                  </strong>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                  <strong>{{ totalPayment }}&nbsp;TL</strong>
+                                </td>
                               </tbody>
                             </table>
 

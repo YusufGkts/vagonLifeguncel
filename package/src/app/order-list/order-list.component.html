@@ -34,7 +34,10 @@
               <div class="col-xl-3 col-xxl-12 col-lg-12">
                 <!-- <p class="mb-2 fs-14">Lorem Ipsum is simply dummy text of the printing and</p> -->
               </div>
-              <div class="col-xl-7 col-xxl-12 col-lg-12">
+              <div
+                class="col-xl-7 col-xxl-12 col-lg-12"
+                style="margin-bottom: 1rem"
+              >
                 <div class="row align-items-center">
                   <div
                     class="col-xl-4 col-md-4 col-sm-4 mb-sm-0 mb-3 mt-sm-0 mt-3"
@@ -59,7 +62,7 @@
                       <div class="media-body ml-1">
                         <p class="mb-0 fs-12">Toplam Sipariş Sayısı</p>
                         <h4 class="mb-0 text-black font-w600 fs-22">
-                          765 Sipariş
+                          {{ orders.length }} Adet
                         </h4>
                       </div>
                     </div>
@@ -107,7 +110,7 @@
                       <div class="media-body ml-1">
                         <p class="mb-0 fs-12">Toplam Satış Tutarı</p>
                         <h4 class="mb-0 text-black font-w600 fs-22">
-                          $126,000
+                          {{ totalRevenue }} TL
                         </h4>
                       </div>
                     </div>
@@ -172,67 +175,71 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="table-responsive table-hover fs-14">
-          <table
-            class="table display mb-4 dataTablesCard dataTable"
-            id="example5"
-          >
-            <thead>
-              <tr>
-                <th>Sipariş ID</th>
-                <th>Tarih</th>
-                <th>Ürün</th>
-                <th>Cari Ad Soyad</th>
-                <th>Konum/Adres Bilgisi</th>
-                <th>Adet</th>
-                <th>Tutar</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let order of orders; let i = index">
-                <td>{{ order.order_id }}</td>
-                <td>{{ order.order_date }}</td>
-                <td>{{ order.order_name }}</td>
-                <td style="cursor: pointer" (click)="onClick(orderDetail)">
-                  {{ order.customer_name }}
-                </td>
-                <td>{{ order.location }}</td>
-                <td>{{ order.order_pck }}</td>
 
-                <td>
-                  <a
-                    href="javascript:void(0);"
-                    class="btn text-primary bgl-primary rounded btn-sm"
-                    >{{ order.totle_revenue }}</a
-                  >
-                </td>
-              </tr>
-            </tbody>
-          </table>
+      <div class="order-search">
+        <input
+          class="form-control"
+          type="search"
+          placeholder="Siparişlerde Ara..."
+          aria-label="Search"
+        />
+      </div>
 
-          <div class="d-flex justify-content-between p-2">
-            <ngb-pagination
-              class="mr-3"
-              [collectionSize]="collectionSize"
-              [(page)]="page"
-              [pageSize]="pageSize"
-              (pageChange)="updateOrderListing()"
+      <div class="row">
+        <div class="col-xl-12">
+          <div class="table-responsive table-hover fs-14">
+            <table
+              class="table display mb-4 dataTablesCard dataTable"
+              id="example5"
             >
-            </ngb-pagination>
+              <thead>
+                <tr>
+                  <th>Sipariş ID</th>
+                  <th>Tarih</th>
+                  <th>Ürün</th>
+                  <th>Ad Soyad</th>
+                  <th>Adres Bilgisi</th>
+                  <th>Adet</th>
+                  <th>Tutar</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let order of orders; let i = index">
+                  <td>{{ order.order_id }}</td>
+                  <td>{{ order.order_date }}</td>
+                  <td>{{ order.order_name }}</td>
+                  <td>
+                    {{ order.customer_name }}
+                  </td>
+                  <td>{{ order.location }}</td>
+                  <td>{{ order.order_pck }}</td>
 
-            <select
-              class="custom-select"
-              style="width: auto"
-              [(ngModel)]="pageSize"
-              (ngModelChange)="updateOrderListing()"
-            >
-              <option [ngValue]="5">5 items per page</option>
-              <option [ngValue]="10">10 items per page</option>
-              <option [ngValue]="20">20 items per page</option>
-            </select>
+                  <td>{{ order.totle_revenue }} TL</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="d-flex justify-content-between p-2">
+              <ngb-pagination
+                class="mr-3"
+                [collectionSize]="collectionSize"
+                [(page)]="page"
+                [pageSize]="pageSize"
+                (pageChange)="updateOrderListing()"
+              >
+              </ngb-pagination>
+
+              <select
+                class="custom-select"
+                style="width: auto"
+                [(ngModel)]="pageSize"
+                (ngModelChange)="updateOrderListing()"
+              >
+                <option [ngValue]="5">5 items per page</option>
+                <option [ngValue]="10">10 items per page</option>
+                <option [ngValue]="20">20 items per page</option>
+              </select>
+            </div>
           </div>
         </div>
       </div>
