@@ -16,7 +16,7 @@ export interface Customer {
   cust_phone: number;
 }
 
-const CUSTOMERS: Customer[] = [
+export const CUSTOMERS: Customer[] = [
   {
     cust_id: '#1',
     join_date: '21/11/2017',
@@ -148,6 +148,19 @@ const CUSTOMERS: Customer[] = [
     cust_password: 'abc123',
     cust_phone: 5061805451,
   },
+  {
+    cust_id: '#11',
+    join_date: '21/11/2017',
+    customer_name: 'Cive Slauw',
+    ticket_ordered: 'The Story Of Danaou Taba (Musical Drama)',
+    location: 'Medan Indonesia',
+    last_order: '04/08/2020 12:34 AM',
+    total_spent: '$1,300',
+    isSelected: false,
+    tcKimlik: 10349812179,
+    cust_password: 'abc123',
+    cust_phone: 5061805451,
+  },
 ];
 
 @Component({
@@ -157,7 +170,8 @@ const CUSTOMERS: Customer[] = [
 })
 export class CustomerListComponent implements OnInit {
   checkedCustomerList: any;
-
+  filteredCustomers: Customer[];
+  searchKey: string;
   isMasterSel: boolean;
   checkSingleItem: boolean = true;
 
@@ -165,7 +179,9 @@ export class CustomerListComponent implements OnInit {
     this.isMasterSel = false;
 
     this.updateCustomerListing();
+    this.filteredCustomers = this.customers;
 
+    console.log(this.filteredCustomers);
     this.getCheckedItemList();
   }
   goToComponentProfile(): void {}
@@ -179,7 +195,7 @@ export class CustomerListComponent implements OnInit {
   }
 
   page = 1;
-  pageSize = 10;
+  pageSize = 1000000;
   collectionSize = CUSTOMERS.length;
   customers: Customer[];
 
@@ -222,5 +238,17 @@ export class CustomerListComponent implements OnInit {
       this.isMasterSel = true;
     }
     this.checkedCustomerList = JSON.stringify(this.checkedCustomerList);
+  }
+
+  onKey(event) {
+    if (!this.searchKey) {
+      this.filteredCustomers = this.customers;
+    } else {
+      this.filteredCustomers = this.customers.filter((a) => {
+        return a.customer_name
+          .toLocaleLowerCase()
+          .match(this.searchKey.toLocaleLowerCase());
+      });
+    }
   }
 }

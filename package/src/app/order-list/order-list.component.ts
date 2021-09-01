@@ -1,6 +1,5 @@
-import { Component, OnInit, PipeTransform } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { TableFilteringComponent } from '../bootstrap/table/table-filtering/table-filtering.component';
 
 export interface order {
   order_id?: string;
@@ -13,6 +12,7 @@ export interface order {
   refund: string;
   totle_revenue: number;
   refund_class: string;
+  status: string;
 }
 
 export const ORDERS: order[] = [
@@ -27,6 +27,7 @@ export const ORDERS: order[] = [
     refund: 'NO',
     totle_revenue: 125,
     refund_class: 'text-black',
+    status: 'Tamamlandı',
   },
   {
     order_id: '#0012451',
@@ -39,6 +40,7 @@ export const ORDERS: order[] = [
     refund: 'NO',
     totle_revenue: 536,
     refund_class: 'text-black',
+    status: 'Sipariş Hazırlanıyor',
   },
   {
     order_id: '#0012451',
@@ -51,6 +53,7 @@ export const ORDERS: order[] = [
     refund: 'Refund',
     totle_revenue: 536,
     refund_class: 'text-danger',
+    status: 'Kargoya Verildi',
   },
   {
     order_id: '#0012451',
@@ -63,6 +66,7 @@ export const ORDERS: order[] = [
     refund: 'NO',
     totle_revenue: 65,
     refund_class: 'text-black',
+    status: 'İade Edildi',
   },
   {
     order_id: '#0012451',
@@ -75,6 +79,7 @@ export const ORDERS: order[] = [
     refund: 'NO',
     totle_revenue: 44,
     refund_class: 'text-black',
+    status: 'Kargoya Verildi',
   },
   {
     order_id: '#0012451',
@@ -87,6 +92,7 @@ export const ORDERS: order[] = [
     refund: 'Refund',
     totle_revenue: 51,
     refund_class: 'text-danger',
+    status: 'Sipariş Hazırlanıyor',
   },
   {
     order_id: '#0012451',
@@ -99,6 +105,7 @@ export const ORDERS: order[] = [
     refund: 'Refund',
     totle_revenue: 124,
     refund_class: 'text-danger',
+    status: 'İade Edildi',
   },
   {
     order_id: '#0012451',
@@ -111,6 +118,7 @@ export const ORDERS: order[] = [
     refund: 'NO',
     totle_revenue: 536,
     refund_class: 'text-black',
+    status: 'Sipariş Hazırlanıyor',
   },
   {
     order_id: '#0012451',
@@ -123,6 +131,7 @@ export const ORDERS: order[] = [
     refund: 'NO',
     totle_revenue: 65,
     refund_class: 'text-black',
+    status: 'Tamamlandı',
   },
   {
     order_id: '#0012451',
@@ -135,6 +144,7 @@ export const ORDERS: order[] = [
     refund: 'NO',
     totle_revenue: 44,
     refund_class: 'text-black',
+    status: 'Tamamlandı',
   },
   {
     order_id: '#0012451',
@@ -147,6 +157,7 @@ export const ORDERS: order[] = [
     refund: 'Refund',
     totle_revenue: 51,
     refund_class: 'text-danger',
+    status: 'Tamamlandı',
   },
 ];
 
@@ -157,9 +168,13 @@ export const ORDERS: order[] = [
 })
 export class OrderListComponent implements OnInit {
   totalRevenue: number = 0;
-  filteredOrders: any;
+  filteredOrders: order[];
+  searchText: string;
+
   constructor(private router: Router, private route: ActivatedRoute) {
     this.updateOrderListing();
+    this.filteredOrders = this.orders;
+    console.log(this.filteredOrders);
   }
 
   ngOnInit(): void {
@@ -182,5 +197,16 @@ export class OrderListComponent implements OnInit {
       (this.page - 1) * this.pageSize,
       (this.page - 1) * this.pageSize + this.pageSize
     );
+  }
+  onKey(event) {
+    if (!this.searchText) {
+      this.filteredOrders = this.orders;
+    } else {
+      this.filteredOrders = this.orders.filter((j) => {
+        return j.customer_name
+          .toLocaleLowerCase()
+          .match(this.searchText.toLocaleLowerCase());
+      });
+    }
   }
 }

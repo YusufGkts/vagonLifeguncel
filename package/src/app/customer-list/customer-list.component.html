@@ -27,12 +27,13 @@
           </div>
         </div>
       </div>
-      <div class="col-xl-8">
+
+      <div class="col-xl-12">
         <div class="card m-0">
           <div class="card-body py-3 py-md-2">
             <div class="row align-items-center">
-              <div class="col-md-5 mb-3 mb-md-0">
-                <div class="media align-items-end">
+              <div class="col-md-7 mb-3 mb-md-0" style="display: flex">
+                <div class="col-5 media align-items-end">
                   <span class="mr-2 mb-1">
                     <svg
                       width="24"
@@ -56,16 +57,26 @@
                   </span>
 
                   <div class="media-body ml-1">
-                    <p class="mb-1 fs-14">Toplam Cari Sayısı</p>
                     <h3 class="mb-0 text-black font-w600 fs-20">
                       {{ customers.length }} Kişi
                     </h3>
+                    <strong>Toplam Cari Sayısı</strong>
                   </div>
                 </div>
               </div>
-              <div class="col-md-7 text-md-right">
+
+              <div class="col-md-5 text-md-right">
+                <input
+                  class="form-control"
+                  type="search"
+                  placeholder="Arama Yap..."
+                  aria-label="Search"
+                  [(ngModel)]="searchKey"
+                  (keyup)="onKey($event)"
+                />
                 <!-- <a href="javascript:void(0);" class="btn btn-outline-primary rounded btn-sm px-4">Active</a> -->
-                <a
+
+                <!-- <a
                   href="javascript:void(0);"
                   class="btn btn-secondary rounded ml-2 btn-sm px-4"
                   >Düzenle</a
@@ -74,7 +85,7 @@
                   href="javascript:void(0);"
                   class="btn btn-danger rounded ml-2 btn-sm px-4"
                   >Sil</a
-                >
+                > -->
               </div>
             </div>
           </div>
@@ -130,7 +141,7 @@
             <tbody>
               <tr
                 (click)="onClick(customer)"
-                *ngFor="let customer of customers; let i = index"
+                *ngFor="let customer of filteredCustomers; let i = index"
                 style="cursor: pointer"
               >
                 <!-- <td>

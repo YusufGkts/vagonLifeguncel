@@ -27,7 +27,17 @@
           </div>
         </div>
       </div>
-      <div class="col-xl-9">
+      <div class="order-search">
+        <input
+          class="form-control"
+          type="search"
+          placeholder="Siparişlerde Ara..."
+          aria-label="Search"
+          [(ngModel)]="searchText"
+          (keyup)="onKey($event)"
+        />
+      </div>
+      <div style="margin-bottom: 1rem" class="col-xl-12">
         <div class="card m-0">
           <div class="card-body px-4 py-3 py-lg-2">
             <div class="row align-items-center">
@@ -176,15 +186,6 @@
         </div>
       </div>
 
-      <div class="order-search">
-        <input
-          class="form-control"
-          type="search"
-          placeholder="Siparişlerde Ara..."
-          aria-label="Search"
-        />
-      </div>
-
       <div class="row">
         <div class="col-xl-12">
           <div class="table-responsive table-hover fs-14">
@@ -205,7 +206,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let order of orders; let i = index">
+                <tr *ngFor="let order of filteredOrders; let i = index">
                   <td>{{ order.order_id }}</td>
                   <td>{{ order.order_date }}</td>
                   <td>{{ order.order_name }}</td>

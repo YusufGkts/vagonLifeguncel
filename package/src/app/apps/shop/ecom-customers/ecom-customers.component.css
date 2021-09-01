@@ -1,3 +1,6 @@
 .btn-secondary{
     border-color: none;
 }
+.text-primary {
+    color: #4D706C !important;
+}
