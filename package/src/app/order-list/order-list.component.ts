@@ -13,6 +13,7 @@ export interface order {
   totle_revenue: number;
   refund_class: string;
   status: string;
+  statusNumber?: number;
 }
 
 export const ORDERS: order[] = [
@@ -28,6 +29,7 @@ export const ORDERS: order[] = [
     totle_revenue: 125,
     refund_class: 'text-black',
     status: 'Tamamlandı',
+    statusNumber: 1,
   },
   {
     order_id: '#0012451',
@@ -41,6 +43,7 @@ export const ORDERS: order[] = [
     totle_revenue: 536,
     refund_class: 'text-black',
     status: 'Sipariş Hazırlanıyor',
+    statusNumber: 2,
   },
   {
     order_id: '#0012451',
@@ -54,6 +57,7 @@ export const ORDERS: order[] = [
     totle_revenue: 536,
     refund_class: 'text-danger',
     status: 'Kargoya Verildi',
+    statusNumber: 3,
   },
   {
     order_id: '#0012451',
@@ -67,6 +71,7 @@ export const ORDERS: order[] = [
     totle_revenue: 65,
     refund_class: 'text-black',
     status: 'İade Edildi',
+    statusNumber: 4,
   },
   {
     order_id: '#0012451',
@@ -198,14 +203,21 @@ export class OrderListComponent implements OnInit {
       (this.page - 1) * this.pageSize + this.pageSize
     );
   }
-  onKey(event) {
+
+  onKey() {
     if (!this.searchText) {
       this.filteredOrders = this.orders;
     } else {
-      this.filteredOrders = this.orders.filter((j) => {
-        return j.customer_name
-          .toLocaleLowerCase()
-          .match(this.searchText.toLocaleLowerCase());
+      this.filteredOrders = this.orders.filter((order) => {
+        return (
+          order.customer_name
+            .toLocaleLowerCase()
+            .match(this.searchText.toLocaleLowerCase()) ||
+          order.order_id.match(this.searchText) ||
+          order.order_name
+            .toLocaleLowerCase()
+            .match(this.searchText.toLocaleLowerCase())
+        );
       });
     }
   }

@@ -8,6 +8,26 @@ import { order, ORDERS } from 'src/app/order-list/order-list.component';
 })
 export class OrderComponent implements OnInit {
   orderInformations: order[];
+  levelNum:number;
+  levels:Array<Object> = [
+      {num: 0, name: "AA"},
+      {num: 1, name: "BB"}
+  ];
+
+  toNumber(){
+    this.levelNum = +this.levelNum;
+    console.log(this.levelNum);
+  }
+
+  selectedLevel = this.levels[0];
+
+  selectedLevelCustomCompare = {num: 1, name: "BB"}
+
+  compareFn(a, b) {
+    console.log(a, b, a && b && a.num == b.num);
+    return a && b && a.num == b.num;
+  }
+ 
 
   constructor() {
     this.orderInformations = ORDERS;
