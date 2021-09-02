@@ -13,7 +13,7 @@ export interface order {
   totle_revenue: number;
   refund_class: string;
   status: string;
-  statusNumber?: number;
+  customer_phone: string;
 }
 
 export const ORDERS: order[] = [
@@ -22,17 +22,18 @@ export const ORDERS: order[] = [
     order_date: '04/08/2020 12:34 AM',
     order_name: 'The Story Of Danaou Taba (Musical Drama)',
     customer_name: 'Bella Simatupang',
-    location: 'London, US',
+    location:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis earum consequatur tenetur corrupti illum repudiandae numquam sapiente nostrum obcaecati. Consectetur.',
     order_pck: 1,
     order_total_pck: '567k left',
     refund: 'NO',
     totle_revenue: 125,
     refund_class: 'text-black',
     status: 'Tamamlandı',
-    statusNumber: 1,
+    customer_phone: '05061805451',
   },
   {
-    order_id: '#0012451',
+    order_id: '#001234',
     order_date: '04/08/2020 12:34 AM',
     order_name: 'The Story Of Danaou Taba (Musical Drama)',
     customer_name: 'Kevin Hurt',
@@ -42,11 +43,11 @@ export const ORDERS: order[] = [
     refund: 'NO',
     totle_revenue: 536,
     refund_class: 'text-black',
-    status: 'Sipariş Hazırlanıyor',
-    statusNumber: 2,
+    status: 'İade Alındı',
+    customer_phone: '05061805451',
   },
   {
-    order_id: '#0012451',
+    order_id: '#004564',
     order_date: '04/08/2020 12:34 AM',
     order_name: 'The Story Of Danaou Taba (Musical Drama)',
     customer_name: 'Bella Simatupang',
@@ -57,10 +58,10 @@ export const ORDERS: order[] = [
     totle_revenue: 536,
     refund_class: 'text-danger',
     status: 'Kargoya Verildi',
-    statusNumber: 3,
+    customer_phone: '05061805451',
   },
   {
-    order_id: '#0012451',
+    order_id: '#005688',
     order_date: '04/08/2020 12:34 AM',
     order_name: 'The Story Of Danaou Taba (Musical Drama)',
     customer_name: 'Kevin Hurt',
@@ -70,11 +71,11 @@ export const ORDERS: order[] = [
     refund: 'NO',
     totle_revenue: 65,
     refund_class: 'text-black',
-    status: 'İade Edildi',
-    statusNumber: 4,
+    status: 'Tamamlandı',
+    customer_phone: '05061805451',
   },
   {
-    order_id: '#0012451',
+    order_id: '#003466',
     order_date: '04/08/2020 12:34 AM',
     order_name: 'The Story Of Danaou Taba (Musical Drama)',
     customer_name: 'Bella Simatupang',
@@ -84,10 +85,11 @@ export const ORDERS: order[] = [
     refund: 'NO',
     totle_revenue: 44,
     refund_class: 'text-black',
-    status: 'Kargoya Verildi',
+    status: 'Sipariş Hazırlanıyor',
+    customer_phone: '05061805451',
   },
   {
-    order_id: '#0012451',
+    order_id: '#0012613',
     order_date: '04/08/2020 12:34 AM',
     order_name: 'The Story Of Danaou Taba (Musical Drama)',
     customer_name: 'Bella Simatupang',
@@ -98,9 +100,10 @@ export const ORDERS: order[] = [
     totle_revenue: 51,
     refund_class: 'text-danger',
     status: 'Sipariş Hazırlanıyor',
+    customer_phone: '05061805451',
   },
   {
-    order_id: '#0012451',
+    order_id: '#0066472',
     order_date: '04/08/2020 12:34 AM',
     order_name: 'The Story Of Danaou Taba (Musical Drama)',
     customer_name: 'Kevin Hurt',
@@ -110,10 +113,11 @@ export const ORDERS: order[] = [
     refund: 'Refund',
     totle_revenue: 124,
     refund_class: 'text-danger',
-    status: 'İade Edildi',
+    status: 'Kargoya Verildi',
+    customer_phone: '05061805451',
   },
   {
-    order_id: '#0012451',
+    order_id: '#63457345',
     order_date: '04/08/2020 12:34 AM',
     order_name: 'The Story Of Danaou Taba (Musical Drama)',
     customer_name: 'Bella Simatupang',
@@ -123,10 +127,11 @@ export const ORDERS: order[] = [
     refund: 'NO',
     totle_revenue: 536,
     refund_class: 'text-black',
-    status: 'Sipariş Hazırlanıyor',
+    status: 'Kargoya Verildi',
+    customer_phone: '05061805451',
   },
   {
-    order_id: '#0012451',
+    order_id: '#0045725',
     order_date: '04/08/2020 12:34 AM',
     order_name: 'The Story Of Danaou Taba (Musical Drama)',
     customer_name: 'Kevin Hurt',
@@ -137,9 +142,10 @@ export const ORDERS: order[] = [
     totle_revenue: 65,
     refund_class: 'text-black',
     status: 'Tamamlandı',
+    customer_phone: '05061805451',
   },
   {
-    order_id: '#0012451',
+    order_id: '#00234562',
     order_date: '04/08/2020 12:34 AM',
     order_name: 'The Story Of Danaou Taba (Musical Drama)',
     customer_name: 'Bella Simatupang',
@@ -149,10 +155,11 @@ export const ORDERS: order[] = [
     refund: 'NO',
     totle_revenue: 44,
     refund_class: 'text-black',
-    status: 'Tamamlandı',
+    status: 'İade Alındı',
+    customer_phone: '05061805451',
   },
   {
-    order_id: '#0012451',
+    order_id: '#00734526',
     order_date: '04/08/2020 12:34 AM',
     order_name: 'The Story Of Danaou Taba (Musical Drama)',
     customer_name: 'Bella Simatupang',
@@ -163,6 +170,7 @@ export const ORDERS: order[] = [
     totle_revenue: 51,
     refund_class: 'text-danger',
     status: 'Tamamlandı',
+    customer_phone: '05061805451',
   },
 ];
 
@@ -175,11 +183,13 @@ export class OrderListComponent implements OnInit {
   totalRevenue: number = 0;
   filteredOrders: order[];
   searchText: string;
+  isClicked: boolean;
 
   constructor(private router: Router, private route: ActivatedRoute) {
     this.updateOrderListing();
     this.filteredOrders = this.orders;
     console.log(this.filteredOrders);
+    this.isClicked = false;
   }
 
   ngOnInit(): void {
@@ -187,6 +197,11 @@ export class OrderListComponent implements OnInit {
       console.log(a.totle_revenue);
       this.totalRevenue = this.totalRevenue + a.totle_revenue;
     });
+  }
+
+  openDetails() {
+    this.isClicked = !this.isClicked;
+    console.log(this.isClicked);
   }
 
   page = 1;

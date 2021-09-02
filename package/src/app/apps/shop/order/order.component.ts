@@ -8,30 +8,32 @@ import { order, ORDERS } from 'src/app/order-list/order-list.component';
 })
 export class OrderComponent implements OnInit {
   orderInformations: order[];
-  levelNum:number;
-  levels:Array<Object> = [
-      {num: 0, name: "AA"},
-      {num: 1, name: "BB"}
+  levelNum: string;
+  levels: Array<Object> = [
+    { val: 1, name: 'Sipariş Hazırlanıyor' },
+    { val: 2, name: 'Kargoya Verildi' },
+    { val: 3, name: 'Tamamlandı' },
+    { val: 4, name: 'İade Edildi' },
   ];
 
-  toNumber(){
-    this.levelNum = +this.levelNum;
+  toNumber() {
+    this.levelNum = this.levelNum;
     console.log(this.levelNum);
   }
 
-  selectedLevel = this.levels[0];
+  selectedLevel = this.levels[1];
 
-  selectedLevelCustomCompare = {num: 1, name: "BB"}
+  selectedLevelCustomCompare = { num: 1, name: 'BB' };
 
   compareFn(a, b) {
     console.log(a, b, a && b && a.num == b.num);
     return a && b && a.num == b.num;
   }
- 
 
   constructor() {
     this.orderInformations = ORDERS;
     console.log(this.orderInformations);
+    this.orderInformations = this.orderInformations;
   }
 
   ngOnInit(): void {}

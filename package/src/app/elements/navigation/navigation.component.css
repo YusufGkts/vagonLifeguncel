@@ -19,3 +19,8 @@
     background: #fff !important;
     color: #7FCDBF !important;
 }
+
+::ng-deep
+     [data-sibebarbg="color_3"] .menu-toggle .deznav .metismenu li > ul {
+        background: #7FCDBF !important;
+    }
