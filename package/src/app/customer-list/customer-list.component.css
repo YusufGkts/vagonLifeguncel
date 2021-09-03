@@ -19,3 +19,22 @@
 .text-primary {
     color: #4D706C !important;
 }
+
+.customer-card-title {
+    background-color: #ffffff;
+    border-radius: 20px;
+    display: flex;
+    padding: 1rem;
+    font-weight: 600;
+  }
+  
+  .customer-card-body {
+    display: flex;
+    padding: 1rem;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    cursor: pointer;
+    align-items: center;
+  }
+  

@@ -30,16 +30,17 @@
 .order-detail {
   align-items: center;
   padding: 2rem;
-  display: flex;
 }
 .detail-phone{
     display: flex;
 }
 .detail-address{
     display: flex;
+    margin-top: 1rem;
 
 }
 .detail-status{
     display: flex;
+    margin-top: 1rem;
 
 }

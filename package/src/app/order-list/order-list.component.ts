@@ -183,25 +183,22 @@ export class OrderListComponent implements OnInit {
   totalRevenue: number = 0;
   filteredOrders: order[];
   searchText: string;
-  isClicked: boolean;
+  isClicked: number;
 
   constructor(private router: Router, private route: ActivatedRoute) {
     this.updateOrderListing();
     this.filteredOrders = this.orders;
-    console.log(this.filteredOrders);
-    this.isClicked = false;
+    this.isClicked = null;
   }
 
   ngOnInit(): void {
     this.orders.forEach((a) => {
-      console.log(a.totle_revenue);
       this.totalRevenue = this.totalRevenue + a.totle_revenue;
     });
   }
 
-  openDetails() {
-    this.isClicked = !this.isClicked;
-    console.log(this.isClicked);
+  openDetails(args) {
+    this.isClicked = args;
   }
 
   page = 1;

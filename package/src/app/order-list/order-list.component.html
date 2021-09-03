@@ -2,10 +2,10 @@
   <!-- row -->
   <div class="container-fluid">
     <div class="row mb-2 align-items-center">
-      <div class="col-xl-3 align-self-start">
-        <div class="card mb-3 bgl-primary">
-          <div style="background-color: #7fcdbf" class="card-body px-4 py-3">
-            <div class="media align-items-center margin-top1rem">
+      <div class="col-xl-4 align-self-start" style="margin-top: 1rem">
+        <div class="card mb-3 bgl-primary" style="background-color: #7fcdbf">
+          <div class="media-body ml-1" class="card-body px-4 py-3">
+            <div class="media align-items-center">
               <span class="mr-4">
                 <svg
                   width="34"
@@ -20,7 +20,7 @@
                   />
                 </svg>
               </span>
-              <div class="media-body ml-1">
+              <div>
                 <h5 class="mb-0 text-primary font-w600">Sipariş Listesi</h5>
               </div>
             </div>
@@ -37,6 +37,12 @@
           (keyup)="onKey()"
         />
       </div>
+      <div class="search-filter-select">
+        <select>
+          <option >a</option>
+        </select>
+      </div>
+
       <div style="margin-bottom: 1rem" class="col-xl-12">
         <div class="card m-0">
           <div class="card-body px-4 py-3 py-lg-2">
@@ -186,41 +192,37 @@
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-12 order-card-title">
-        <div class="col-2 card-item-1">Sipariş ID</div>
-        <div class="col-2 card-item-2">Tarih</div>
-        <div class="col-3 card-item-3">Ürün</div>
-        <div class="col-3 card-item-item-4">Ad Soyad</div>
-        <div class="col-1 card-item-5">Adet</div>
-        <div class="col-1 card-item-6">Tutar</div>
-      </div>
+    <div class="row order-card-title">
+      <div class="col-2 card-item-1">Sipariş ID</div>
+      <div class="col-2 card-item-2">Tarih</div>
+      <div class="col-3 card-item-3">Ürün</div>
+      <div class="col-3 card-item-item-4">Ad Soyad</div>
+      <div class="col-1 card-item-5">Adet</div>
+      <div class="col-1 card-item-6">Tutar</div>
     </div>
     <div
-      *ngFor="let order of filteredOrders; index as i"
-      (click)="openDetails()"
-      class="row"
+      *ngFor="let order of filteredOrders; let i = index"
+      (click)="openDetails(i)"
+      class="row order-card-body"
     >
-      <div class="col-12 order-card-body">
-        <div class="col-2 card-content-1">{{ order.order_id }}</div>
-        <div class="col-2 card-content-2">{{ order.order_date }}</div>
-        <div class="col-3 card-content-3">{{ order.order_name }}</div>
-        <div class="col-3 card-content-4">{{ order.customer_name }}</div>
-        <div class="col-1 card-content-5">{{ order.order_pck }}</div>
-        <div class="col-1 card-content-6">{{ order.totle_revenue }}TL</div>
-      </div>
-      <div *ngIf="isClicked" class="row">
-        <div class="col-12 order-detail">
-          <div class="col-3 detail-phone">
+      <div class="col-2 card-content-1">{{ order.order_id }}</div>
+      <div class="col-2 card-content-2">{{ order.order_date }}</div>
+      <div class="col-3 card-content-3">{{ order.order_name }}</div>
+      <div class="col-3 card-content-4">{{ order.customer_name }}</div>
+      <div class="col-1 card-content-5">{{ order.order_pck }}</div>
+      <div class="col-1 card-content-6">{{ order.totle_revenue }}TL</div>
+      <div *ngIf="isClicked == i" class="row">
+        <div class="order-detail">
+          <div class="detail-phone">
             <strong>Telefon No:</strong>&nbsp;
             {{ order.customer_phone }}
           </div>
 
-          <div class="col-6 detail-address">
+          <div class="detail-address">
             <strong>Teslimat Adresi:</strong>&nbsp;
             {{ order.location }}
           </div>
-          <div class="col-3 detail-status">
+          <div class="detail-status">
             <strong>Sipariş Durumu:</strong>&nbsp;
             {{ order.status }}
           </div>
