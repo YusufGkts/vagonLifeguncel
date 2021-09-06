@@ -37,9 +37,20 @@
           (keyup)="onKey()"
         />
       </div>
+
       <div class="search-filter-select">
-        <select>
-          <option >a</option>
+        <select
+          class="filter-select"
+          [(ngModel)]="selected"
+          (ngModelChange)="onSelect($event)"
+        >
+          <option
+            class="filter-options"
+            *ngFor="let option of options"
+            [value]="option.id"
+          >
+            {{ option.name }}
+          </option>
         </select>
       </div>
 
@@ -201,7 +212,7 @@
       <div class="col-1 card-item-6">Tutar</div>
     </div>
     <div
-      *ngFor="let order of filteredOrders; let i = index"
+      *ngFor="let order of selectedData; let i = index"
       (click)="openDetails(i)"
       class="row order-card-body"
     >
@@ -224,7 +235,7 @@
           </div>
           <div class="detail-status">
             <strong>Sipariş Durumu:</strong>&nbsp;
-            {{ order.status }}
+            {{ order.status_name }}
           </div>
         </div>
       </div>

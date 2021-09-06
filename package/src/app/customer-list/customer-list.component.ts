@@ -189,7 +189,7 @@ export class CustomerListComponent implements OnInit {
   ngOnInit(): void {}
 
   onClick(customerDetail) {
-    this.router.navigate(['./admin/app-profile/'], {
+    this.router.navigate(['./admin/cari-profil/'], {
       state: { data: { customerDetail } },
     });
   }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Event, Router } from '@angular/router';
 
 export interface order {
   order_id?: string;
@@ -14,6 +14,7 @@ export interface order {
   refund_class: string;
   status: string;
   customer_phone: string;
+  status_name: string;
 }
 
 export const ORDERS: order[] = [
@@ -29,8 +30,9 @@ export const ORDERS: order[] = [
     refund: 'NO',
     totle_revenue: 125,
     refund_class: 'text-black',
-    status: 'Tamamlandı',
+    status: '2',
     customer_phone: '05061805451',
+    status_name: 'Tamamlandı',
   },
   {
     order_id: '#001234',
@@ -43,8 +45,9 @@ export const ORDERS: order[] = [
     refund: 'NO',
     totle_revenue: 536,
     refund_class: 'text-black',
-    status: 'İade Alındı',
+    status: '5',
     customer_phone: '05061805451',
+    status_name: 'İade Alındı',
   },
   {
     order_id: '#004564',
@@ -57,8 +60,9 @@ export const ORDERS: order[] = [
     refund: 'Refund',
     totle_revenue: 536,
     refund_class: 'text-danger',
-    status: 'Kargoya Verildi',
+    status: '3',
     customer_phone: '05061805451',
+    status_name: 'Sipariş Hazırlanıyor',
   },
   {
     order_id: '#005688',
@@ -71,8 +75,9 @@ export const ORDERS: order[] = [
     refund: 'NO',
     totle_revenue: 65,
     refund_class: 'text-black',
-    status: 'Tamamlandı',
+    status: '2',
     customer_phone: '05061805451',
+    status_name: 'Tamamlandı',
   },
   {
     order_id: '#003466',
@@ -85,8 +90,9 @@ export const ORDERS: order[] = [
     refund: 'NO',
     totle_revenue: 44,
     refund_class: 'text-black',
-    status: 'Sipariş Hazırlanıyor',
+    status: '3',
     customer_phone: '05061805451',
+    status_name: 'Sipariş Hazırlanıyor',
   },
   {
     order_id: '#0012613',
@@ -99,8 +105,9 @@ export const ORDERS: order[] = [
     refund: 'Refund',
     totle_revenue: 51,
     refund_class: 'text-danger',
-    status: 'Sipariş Hazırlanıyor',
+    status: '3',
     customer_phone: '05061805451',
+    status_name: 'Sipariş Hazırlanıyor',
   },
   {
     order_id: '#0066472',
@@ -113,8 +120,9 @@ export const ORDERS: order[] = [
     refund: 'Refund',
     totle_revenue: 124,
     refund_class: 'text-danger',
-    status: 'Kargoya Verildi',
+    status: '4',
     customer_phone: '05061805451',
+    status_name: 'Kargoya Verildi',
   },
   {
     order_id: '#63457345',
@@ -127,8 +135,9 @@ export const ORDERS: order[] = [
     refund: 'NO',
     totle_revenue: 536,
     refund_class: 'text-black',
-    status: 'Kargoya Verildi',
+    status: '4',
     customer_phone: '05061805451',
+    status_name: 'Kargoya Verildi',
   },
   {
     order_id: '#0045725',
@@ -141,8 +150,9 @@ export const ORDERS: order[] = [
     refund: 'NO',
     totle_revenue: 65,
     refund_class: 'text-black',
-    status: 'Tamamlandı',
+    status: '2',
     customer_phone: '05061805451',
+    status_name: 'Tamamlandı',
   },
   {
     order_id: '#00234562',
@@ -155,8 +165,9 @@ export const ORDERS: order[] = [
     refund: 'NO',
     totle_revenue: 44,
     refund_class: 'text-black',
-    status: 'İade Alındı',
+    status: '5',
     customer_phone: '05061805451',
+    status_name: 'İade Alındı',
   },
   {
     order_id: '#00734526',
@@ -169,11 +180,12 @@ export const ORDERS: order[] = [
     refund: 'Refund',
     totle_revenue: 51,
     refund_class: 'text-danger',
-    status: 'Tamamlandı',
+    status: '2',
     customer_phone: '05061805451',
+    status_name: 'Tamamlandı',
   },
 ];
-
+var event: Event;
 @Component({
   selector: 'app-order-list',
   templateUrl: './order-list.component.html',
@@ -184,17 +196,37 @@ export class OrderListComponent implements OnInit {
   filteredOrders: order[];
   searchText: string;
   isClicked: number;
+  options = [
+    { name: 'Tüm Durumlar', id: 1 },
+    { name: 'Tamamlandı', id: 2 },
+    { name: 'Sipariş Hazırlanıyor', id: 3 },
+    { name: 'Kargoya Verildi', id: 4 },
+    { name: 'İade Alındı', id: 5 },
+  ];
+  selected: any = '1';
+  selectedData: order[];
 
   constructor(private router: Router, private route: ActivatedRoute) {
+    this.selectedData = this.orders;
     this.updateOrderListing();
     this.filteredOrders = this.orders;
     this.isClicked = null;
+    if (this.selected == '1') {
+      this.selectedData = this.orders;
+    }
   }
 
   ngOnInit(): void {
     this.orders.forEach((a) => {
       this.totalRevenue = this.totalRevenue + a.totle_revenue;
     });
+  }
+  onSelect(args) {
+    if (args == '1') {
+      this.selectedData = this.orders;
+    } else {
+      this.selectedData = this.orders.filter((x) => x.status == args);
+    }
   }
 
   openDetails(args) {
@@ -218,9 +250,9 @@ export class OrderListComponent implements OnInit {
 
   onKey() {
     if (!this.searchText) {
-      this.filteredOrders = this.orders;
+      this.selectedData = this.orders;
     } else {
-      this.filteredOrders = this.orders.filter((order) => {
+      this.selectedData = this.orders.filter((order) => {
         return (
           order.customer_name
             .toLocaleLowerCase()

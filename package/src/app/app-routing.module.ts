@@ -139,7 +139,7 @@ const routes: Routes = [
       { path: 'index-2', component: Dashboard2Component },
       { path: 'dashboard2', component: Dashboard2Component },
       {
-        path: 'app-profile',
+        path: 'cari-profil',
         component: ProfileComponent,
       },
       { path: 'post-details', component: PostDetailsComponent },
