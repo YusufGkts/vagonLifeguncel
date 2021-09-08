@@ -87,7 +87,10 @@ import { LoadingComponent } from './elements/loading/loading.component';
 import { NavHeaderComponent } from './elements/nav-header/nav-header.component';
 import { NavigationComponent } from './elements/navigation/navigation.component';
 
-import { ProfileComponent } from './apps/profile/profile.component';
+import {
+  ProfileComponent,
+  _ProfileDialog,
+} from './apps/profile/profile.component';
 import { UserStatisticsComponent } from './elements/profile/user-statistics/user-statistics.component';
 import { InterestComponent } from './elements/profile/interest/interest.component';
 import { LatestNewsComponent } from './elements/profile/latest-news/latest-news.component';
@@ -649,6 +652,10 @@ import { ReviewsComponent } from './reviews/reviews.component';
 
 import { Dashboard2Component } from './dashboard2/dashboard2.component';
 import { PaymentComponent } from './payments/payment.component';
+import {
+  UserProfileComponent,
+  _UserProfileDialog,
+} from './apps/shop/user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -724,6 +731,7 @@ import { PaymentComponent } from './payments/payment.component';
     BarPatternedComponent,
     BarImagesComponent,
     MixedComponent,
+    _UserProfileDialog,
     MixedLineColumnComponent,
     MixedMultipleYAxisComponent,
     MixedLineAreaComponent,
@@ -751,6 +759,7 @@ import { PaymentComponent } from './payments/payment.component';
     RadarMultipleSeriesComponent,
     RadialbarComponent,
     RadialbarBasicComponent,
+    UserProfileComponent,
     RadialbarMultipleComponent,
     RadialbarCustomAngleCircleComponent,
     RadialbarGradientComponent,

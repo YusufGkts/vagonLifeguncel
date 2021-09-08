@@ -124,6 +124,7 @@ import { CustomerListComponent } from './customer-list/customer-list.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 
 import { Dashboard2Component } from './dashboard2/dashboard2.component';
+import { UserProfileComponent } from './apps/shop/user-profile/user-profile.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'admin/index', pathMatch: 'full' },
@@ -142,6 +143,7 @@ const routes: Routes = [
         path: 'cari-profil',
         component: ProfileComponent,
       },
+      { path: 'kullanıcı-profil', component: UserProfileComponent },
       { path: 'post-details', component: PostDetailsComponent },
       { path: 'email-compose', component: ComposeComponent },
       { path: 'email-inbox', component: InboxComponent },

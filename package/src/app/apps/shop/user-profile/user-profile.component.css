@@ -1,0 +1,4 @@
+.mat-flat-button.mat-primary, .mat-raised-button.mat-primary, .mat-fab.mat-primary, .mat-mini-fab.mat-primary, .mat-badge-content {
+    background-color: red !important;
+    margin-left: 16px;
+}

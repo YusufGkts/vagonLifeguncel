@@ -1,7 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
-import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
-import { Customer } from 'src/app/customer-list/customer-list.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { order, ORDERS } from 'src/app/order-list/order-list.component';
 import { payments, payment } from 'src/app/payments/payment.component';
 
@@ -23,10 +23,17 @@ export class ProfileComponent implements OnInit {
   constructor(
     private modalService: NgbModal,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    public dialog: MatDialog
   ) {
     this.allOrders = ORDERS;
     this.customerPayments = payment;
+  }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(_ProfileDialog);
+
+    dialogRef.afterClosed().subscribe((result) => {});
   }
 
   ngOnInit(): void {
@@ -55,31 +62,13 @@ export class ProfileComponent implements OnInit {
     });
   }
 
-  news = [
-    {
-      image: 'assets/images/profile/5.jpg',
-      title: 'Collection of textile samples',
-      description:
-        'I shared this on my fb wall a few months back, and I thought.',
-      url: 'admin/post-details',
-    },
-    {
-      image: 'assets/images/profile/6.jpg',
-      title: 'Collection of textile samples',
-      description:
-        'I shared this on my fb wall a few months back, and I thought.',
-      url: 'admin/post-details',
-    },
-    {
-      image: 'assets/images/profile/7.jpg',
-      title: 'Collection of textile samples',
-      description:
-        'I shared this on my fb wall a few months back, and I thought.',
-      url: 'admin/post-details',
-    },
-  ];
-
   open(modelId: any) {
     this.modalService.open(modelId);
   }
 }
+
+@Component({
+  selector: 'profile-dialog',
+  templateUrl: 'profile-dialog.html',
+})
+export class _ProfileDialog {}

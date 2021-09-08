@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {MatDialog, MatDialogRef} from '@angular/material/dialog';
-
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-header-scrollbar-action',
   templateUrl: './header-scrollbar-action.component.html',
-  styleUrls: ['./header-scrollbar-action.component.css']
+  styleUrls: ['./header-scrollbar-action.component.css'],
 })
 export class HeaderScrollbarActionComponent implements OnInit {
   constructor(public dialog: MatDialog) {}
@@ -13,16 +12,13 @@ export class HeaderScrollbarActionComponent implements OnInit {
   openDialog() {
     const dialogRef = this.dialog.open(DialogContentExampleDialog);
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
     });
   }
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
-
 
 @Component({
   selector: 'dialog-content-example-dialog',

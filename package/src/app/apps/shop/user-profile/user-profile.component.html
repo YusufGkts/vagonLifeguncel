@@ -7,7 +7,7 @@
       <div class="col-sm-6 p-md-0">
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="javascript:void(0)">Müşteri/Cari Bilgileri</a>
+            <a href="javascript:void(0)">Kullanıcı Bilgileri</a>
           </li>
           <li class="breadcrumb-item active">
             <a href="javascript:void(0)">Profil</a>
@@ -33,85 +33,29 @@
               </div>
               <div class="profile-details">
                 <div class="profile-name px-3 pt-2">
-                  <h4 class="text-primary mb-0">
-                    {{ customerDetail.customer_name }}
-                  </h4>
+                  <h4 class="text-primary mb-0">Ad Soyad</h4>
                   <p>Cari</p>
                 </div>
                 <div class="profile-id px-2 pt-2">
-                  <h4 class="text-muted mb-0">
-                    {{ customerDetail.cust_id }}
-                  </h4>
+                  <h4 class="text-muted mb-0">ID</h4>
                   <p>Cari ID</p>
                 </div>
                 <div style="margin-left: 3rem" class="profile-id px-2 pt-2">
-                  <h4 class="text-muted mb-0">
-                    {{ customerDetail.join_date }}
-                  </h4>
+                  <h4 class="text-muted mb-0">katılma tarihi</h4>
                   <p>Kayıt Tarihi</p>
                 </div>
                 <div style="margin-left: 3rem" class="profile-id px-2 pt-2">
-                  <h4 class="text-muted mb-0">
-                    {{ customerDetail.cust_id }}
-                  </h4>
+                  <h4 class="text-muted mb-0">detay ssanıtım</h4>
                   <p>Güncel Bakiye</p>
                 </div>
                 <div style="margin-left: 3rem" class="profile-id px-2 pt-2">
-                  <h4 class="text-muted mb-0">
-                    {{ customerDetail.cust_id }}
-                  </h4>
+                  <h4 class="text-muted mb-0">herhangi bişey</h4>
                   <p>Siparişler</p>
                 </div>
                 <div style="margin-left: 3rem" class="profile-id px-2 pt-2">
-                  <h4 class="text-muted mb-0">
-                    {{ customerDetail.cust_id }}
-                  </h4>
+                  <h4 class="text-muted mb-0">yine bişeyler</h4>
                   <p>Ödemeler</p>
                 </div>
-
-                <!-- <div class="dropdown dropdown-no-icon ml-auto" ngbDropdown>
-                  <a
-                    href="javascript:void(0);"
-                    class="btn btn-primary light sharp"
-                    ngbDropdownToggle
-                    aria-expanded="true"
-                    ><svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      xmlns:xlink="http://www.w3.org/1999/xlink"
-                      width="18px"
-                      height="18px"
-                      viewBox="0 0 24 24"
-                      version="1.1"
-                    >
-                      <g
-                        stroke="none"
-                        stroke-width="1"
-                        fill="none"
-                        fill-rule="evenodd"
-                      >
-                        <rect x="0" y="0" width="24" height="24"></rect>
-                        <circle fill="#000000" cx="5" cy="12" r="2"></circle>
-                        <circle fill="#000000" cx="12" cy="12" r="2"></circle>
-                        <circle fill="#000000" cx="19" cy="12" r="2"></circle>
-                      </g></svg
-                  ></a>
-                  <ul class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
-                    <li class="dropdown-item">
-                      <i class="fa fa-user-circle text-primary mr-2"></i> View
-                      profile
-                    </li>
-                    <li class="dropdown-item">
-                      <i class="fa fa-users text-primary mr-2"></i> Add to close
-                      friends
-                    </li>
-                    <li class="dropdown-item">
-                      <i class="fa fa-plus text-primary mr-2"></i> Add to group
-                    </li>
-                    <li class="dropdown-item">
-                      <i class="fa fa-ban text-primary mr-2"></i> Block
-                    </li>
-                  </ul>
-                </div> -->
               </div>
             </div>
           </div>
@@ -146,7 +90,7 @@
                                     type="email"
                                     placeholder="Email"
                                     class="form-control"
-                                    [value]="customerDetail.customer_name"
+                                    [value]=""
                                   />
                                 </div>
                                 <div class="form-group col-md-6">
@@ -155,7 +99,7 @@
                                     type="password"
                                     placeholder="Password"
                                     class="form-control"
-                                    [value]="customerDetail.cust_password"
+                                    [value]=""
                                   />
                                 </div>
                               </div>
@@ -165,7 +109,7 @@
                                   <input
                                     type="text"
                                     class="form-control"
-                                    [value]="customerDetail.cust_phone"
+                                    [value]=""
                                   />
                                 </div>
                                 <div class="form-group col-md-4">
@@ -173,18 +117,29 @@
                                   <input
                                     type="text"
                                     class="form-control"
-                                    [value]="customerDetail.tcKimlik"
+                                    [value]=""
                                   />
+                                </div>
+                                <div class="form-row">
+                                  <div class="form-group col-md-6">
+                                    <label>Vergi Dairesi</label>
+                                    <input type="text" class="form-control" />
+                                  </div>
+                                  <div class="form-group col-md-4">
+                                    <label>Vergi No.</label>
+                                    <input type="text" class="form-control" />
+                                  </div>
+                                  <div class="form-group col-md-2"></div>
                                 </div>
                                 <div class="form-group col-md-2"></div>
                               </div>
                               <div class="form-group">
-                                <label>Adres</label>
+                                <label>Şube/Adres</label>
                                 <input
                                   type="text"
                                   placeholder="1234 Main St"
                                   class="form-control"
-                                  [value]="customerDetail.location"
+                                  [value]=""
                                 />
                               </div>
 
@@ -213,7 +168,7 @@
                                 color="primary"
                                 (click)="openDialog()"
                               >
-                                Launch dialog
+                                Kişiyi Sil
                               </button>
                             </form>
                           </div>
@@ -227,7 +182,7 @@
                       data-toggle="tab"
                       class="nav-link"
                       ngbNavLink
-                      >Sipariş Geçmişi</a
+                      >Şubeye Ait Satışlar</a
                     >
                     <ng-template [ngbNavContent]>
                       <div class="row">
@@ -256,36 +211,29 @@
                                 </tr>
                               </thead>
                               <tbody>
-                                <tr
-                                  *ngFor="
-                                    let order of customerOrders;
-                                    let i = index
-                                  "
-                                >
-                                  <td>{{ order.order_id }}</td>
-                                  <td>{{ order.order_date }}</td>
-                                  <td>{{ order.order_name }}</td>
-                                  <td>{{ order.location }}</td>
-                                  <td>{{ order.order_pck }}</td>
-                                  <td>{{ order.order_total_pck }}</td>
+                                <tr>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
                                   <td class="{{ order.refund_class }}">
-                                    <strong>{{ order.refund }}</strong>
+                                    <strong></strong>
                                   </td>
-                                  <td>{{ order.totle_revenue }} TL</td>
+                                  <td>TL</td>
                                 </tr>
                                 <td><strong>Toplam:</strong></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
                                 <td>
-                                  <strong>
-                                    {{ customerOrders.length }}
-                                  </strong>
+                                  <strong> </strong>
                                 </td>
                                 <td></td>
                                 <td></td>
                                 <td>
-                                  <strong>{{ totalPayment }}&nbsp;TL</strong>
+                                  <strong>&nbsp;TL</strong>
                                 </td>
                               </tbody>
                             </table>
@@ -327,7 +275,7 @@
                       data-toggle="tab"
                       class="nav-link"
                       ngbNavLink
-                      >Ödeme Geçmişi</a
+                      >Fatura Geçmişi</a
                     >
                     <ng-template [ngbNavContent]>
                       <div class="row">
@@ -355,34 +303,13 @@
                                 </tr>
                               </thead>
                               <tbody>
-                                <tr
-                                  *ngFor="
-                                    let payment of customerPayment;
-                                    let i = index
-                                  "
-                                >
-                                  <td>{{ payment.payment_id }}</td>
-                                  <td>{{ payment.payment_date }}</td>
-                                  <td>{{ payment.payment_name }}</td>
-                                  <td>{{ payment.payment_type }}</td>
-                                  <td>{{ payment.payment_company }}</td>
-                                  <td class="{{ payment.payment_status }}">
-                                    <strong>{{
-                                      payment.payment_status
-                                    }}</strong>
-                                  </td>
-                                  <td>{{ payment.payment_total }} TL</td>
-                                </tr>
+                                <tr></tr>
 
-                                <td colspan="3">
-                                  <strong> Yapılan Toplam Ödeme:</strong>
-                                </td>
+                                <td colspan="3"></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td>
-                                  <strong> {{ allPayments }} TL </strong>
-                                </td>
+                                <td></td>
                               </tbody>
                             </table>
 
@@ -454,5 +381,5 @@
   </div>
 </div>
 <!--**********************************
-	Content body end
-***********************************-->
+      Content body end
+  ***********************************-->

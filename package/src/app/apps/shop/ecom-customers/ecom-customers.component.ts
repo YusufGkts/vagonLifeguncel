@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 export interface user {
   user_id?: string;
@@ -7,7 +8,9 @@ export interface user {
   location: string;
   user_phone: number;
   user_mail: string;
+  user_password: string;
   isSelected: boolean;
+  user_sales: string;
 }
 
 export const USERS: user[] = [
@@ -19,6 +22,8 @@ export const USERS: user[] = [
     user_phone: 1242314324,
     user_mail: 'asdjas@gmail.com',
     isSelected: false,
+    user_password: 'asdasdasd',
+    user_sales: '530',
   },
   {
     user_id: '2',
@@ -27,7 +32,9 @@ export const USERS: user[] = [
     location: 'Beşiktaş/İstanbul',
     user_phone: 52345252,
     isSelected: false,
-    user_mail: 'asdjas@gmail.com',
+    user_mail: 'deneme12@gmail.com',
+    user_password: 'asdasdasd',
+    user_sales: '530',
   },
   {
     user_id: '#3',
@@ -37,6 +44,8 @@ export const USERS: user[] = [
     user_phone: 36463734634,
     isSelected: false,
     user_mail: 'asdjas@gmail.com',
+    user_password: 'asdasdasd',
+    user_sales: '530',
   },
   {
     user_id: '#4',
@@ -46,6 +55,8 @@ export const USERS: user[] = [
     user_phone: 34525423632,
     isSelected: false,
     user_mail: 'asdjas@gmail.com',
+    user_password: 'asdasdasd',
+    user_sales: '530',
   },
   {
     user_id: '#5',
@@ -55,6 +66,8 @@ export const USERS: user[] = [
     user_phone: 2354235234234,
     isSelected: false,
     user_mail: 'asdjas@gmail.com',
+    user_password: 'asdasdasd',
+    user_sales: '530',
   },
   {
     user_id: '#6',
@@ -64,6 +77,8 @@ export const USERS: user[] = [
     user_phone: 5061805451,
     isSelected: false,
     user_mail: 'asdjas@gmail.com',
+    user_password: 'asdasdasd',
+    user_sales: '530',
   },
   {
     user_id: '#7',
@@ -73,6 +88,8 @@ export const USERS: user[] = [
     user_phone: 5061805451,
     isSelected: false,
     user_mail: 'asdjas@gmail.com',
+    user_password: 'asdasdasd',
+    user_sales: '530',
   },
   {
     user_id: '#8',
@@ -82,6 +99,8 @@ export const USERS: user[] = [
     user_phone: 5061805451,
     isSelected: false,
     user_mail: 'asdjas@gmail.com',
+    user_password: 'asdasdasd',
+    user_sales: '530',
   },
   {
     user_id: '#1',
@@ -91,6 +110,8 @@ export const USERS: user[] = [
     user_phone: 5061805451,
     isSelected: false,
     user_mail: 'asdjas@gmail.com',
+    user_password: 'asdasdasd',
+    user_sales: '530',
   },
   {
     user_id: '#1',
@@ -100,6 +121,8 @@ export const USERS: user[] = [
     user_phone: 5061805451,
     isSelected: false,
     user_mail: 'asdjas@gmail.com',
+    user_password: 'asdasdasd',
+    user_sales: '530',
   },
   {
     user_id: '#1',
@@ -109,6 +132,8 @@ export const USERS: user[] = [
     user_phone: 5061805451,
     isSelected: false,
     user_mail: 'asdjas@gmail.com',
+    user_password: 'asdasdasd',
+    user_sales: '530',
   },
   {
     user_id: '#1',
@@ -118,6 +143,8 @@ export const USERS: user[] = [
     user_phone: 5061805451,
     isSelected: false,
     user_mail: 'asdjas@gmail.com',
+    user_password: 'asdasdasd',
+    user_sales: '530',
   },
   {
     user_id: '#1',
@@ -127,6 +154,8 @@ export const USERS: user[] = [
     user_phone: 5061805451,
     isSelected: false,
     user_mail: 'asdjas@gmail.com',
+    user_password: 'asdasdasd',
+    user_sales: '530',
   },
   {
     user_id: '#1',
@@ -136,6 +165,8 @@ export const USERS: user[] = [
     user_phone: 5061805451,
     isSelected: false,
     user_mail: 'asdjas@gmail.com',
+    user_password: 'asdasdasd',
+    user_sales: '530',
   },
 ];
 
@@ -148,7 +179,7 @@ export class EcomCustomersComponent implements OnInit {
   usersData: user[];
   searchKey: string;
 
-  constructor() {
+  constructor(private router: Router) {
     this.users = USERS;
     this.usersData = this.users;
   }
@@ -159,6 +190,12 @@ export class EcomCustomersComponent implements OnInit {
   pageSize = 1000000;
   collectionSize = USERS.length;
   users: user[];
+
+  onClick(userDetail) {
+    this.router.navigate(['./admin/kullanıcı-profil/'], {
+      state: { data: { userDetail } },
+    });
+  }
 
   onKey(event) {
     if (!this.searchKey) {

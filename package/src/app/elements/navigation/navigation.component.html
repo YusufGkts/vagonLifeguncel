@@ -27,8 +27,17 @@
                 currentHref == '/admin/satis-istatistikleri' ? 'mm-active' : ''
               }}"
               [routerLink]="['/admin/satis-istatistikleri']"
-              >Satış İstatistikleri</a
+              >Stok ve Üretim Kontrol</a
             >
+          </li>
+          <li>
+            <a
+              class="{{
+                currentHref == '/admin/satis-istatistikleri' ? 'mm-active' : ''
+              }}"
+              [routerLink]="['/admin/satis-istatistikleri']"
+              >Toptan Satışlar
+            </a>
           </li>
 
           <li>
@@ -135,7 +144,7 @@
               >Kullanıcı Listesi</a
             >
           </li>
-          <li>
+          <!-- <li>
             <a
               [routerLink]="['/admin/app-profile']"
               class="{{
@@ -143,7 +152,7 @@
               }}"
               >Yeni Kullanıcı Ekle</a
             >
-          </li>
+          </li> -->
           <!-- <li>
             <a
               [routerLink]="['/admin/app-profile']"
@@ -1053,7 +1062,7 @@
               class="{{
                 currentHref == '/admin/form-element' ? 'mm-active' : ''
               }}"
-              >Form Elements</a
+              >SMS Gönderim Servisi</a
             >
           </li>
           <li>
@@ -1062,7 +1071,7 @@
               class="{{
                 currentHref == '/admin/form-validate' ? 'mm-active' : ''
               }}"
-              >Form Validate</a
+              >Bildirim Geçmişi</a
             >
           </li>
         </ul>
